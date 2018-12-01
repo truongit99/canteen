@@ -1,4 +1,4 @@
-package Canteen;
+﻿package Canteen;
 
 /**
  *
@@ -11,7 +11,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-		System.out.print("trung dep trai bu cu");
+		System.out.print("Bojn loofn ngu nafy, coos maf ddocj tao k baatj dduowcj unikeyyy");
 		System.out.print("Đéo");    }
     
 }
