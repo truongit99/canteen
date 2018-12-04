@@ -1,0 +1,52 @@
+create database canteen
+
+zô dtb canteen, excute all da command below 
+--------------------------------------------
+
+create table productType(
+	productTypeID varchar(255),
+    productType varchar(255),
+    PRIMARY KEY (productTypeID)
+);
+
+create table productPrice(
+	productID varchar(255),
+    price float,
+    PRIMARY KEY (productID)
+);
+
+create table employee(
+	employeeID varchar(255),
+    employeeName varchar(255),
+    employeeSex bit,
+    employeeDOB Date,
+    employeePhoneNumber varchar(255),
+    employeeAddress varchar(500),
+    PRIMARY KEY (employeeID)
+);
+
+create table productMenu(
+    productID varchar(255),
+    productName varchar(255),
+    productTypeID varchar(255),
+    PRIMARY KEY (productID),
+    FOREIGN KEY (productTypeID) REFERENCES productType(productTypeID)
+);
+
+create table bill(
+	billID varchar(255),
+    purchaseDate DateTime,
+    totalPrice float,
+    employeeID varchar(255),
+    PRIMARY KEY (billID),
+    FOREIGN KEY (employeeID) REFERENCES employee(employeeID)
+);
+
+create table billDetail(
+	billID int,
+    productID varchar(255),
+    quantity int,
+    PRIMARY KEY (billID),
+    FOREIGN KEY (productID) REFERENCES productPrice(productID)
+);
+
