@@ -65,7 +65,7 @@
             <Component class="javax.swing.JLabel" name="logoBackground">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/canteen_image/010 Winter Neva.png"/>
+                  <Image iconType="3" name="/canteen_image/051 February Ink.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -233,10 +233,10 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="81" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                          <EmptySpace pref="74" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -272,7 +272,7 @@
             <Component class="javax.swing.JLabel" name="menuBackground">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/canteen_image/051 February Ink.png"/>
+                  <Image iconType="2" name="C:\Users\Admin\Downloads\gardient\023 Rare Wind.png"/>
                 </Property>
               </Properties>
               <Constraints>

@@ -57,7 +57,7 @@ public class EmployeesMain extends javax.swing.JFrame {
         jPanel2.add(bigLogo);
         bigLogo.setBounds(220, 20, 840, 210);
 
-        logoBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/010 Winter Neva.png"))); // NOI18N
+        logoBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/051 February Ink.png"))); // NOI18N
         jPanel2.add(logoBackground);
         logoBackground.setBounds(1, 0, 1360, 250);
 
@@ -173,10 +173,10 @@ public class EmployeesMain extends javax.swing.JFrame {
         panelAnalyze.setLayout(panelAnalyzeLayout);
         panelAnalyzeLayout.setHorizontalGroup(
             panelAnalyzeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAnalyzeLayout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
+            .addGroup(panelAnalyzeLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
                 .addComponent(jLabel2)
-                .addGap(63, 63, 63))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         panelAnalyzeLayout.setVerticalGroup(
             panelAnalyzeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +189,7 @@ public class EmployeesMain extends javax.swing.JFrame {
         mainMenu.add(panelAnalyze);
         panelAnalyze.setBounds(550, 130, 240, 170);
 
-        menuBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/051 February Ink.png"))); // NOI18N
+        menuBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Downloads\\gardient\\023 Rare Wind.png")); // NOI18N
         mainMenu.add(menuBackground);
         menuBackground.setBounds(0, 0, 1360, 440);
 

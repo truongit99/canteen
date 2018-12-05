@@ -154,6 +154,7 @@ public class EmployeesManage extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(229, 238, 206));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextField1.setBorder(null);
         jTextField1.setOpaque(false);
         jPanel3.add(jTextField1);
         jTextField1.setBounds(800, 40, 300, 30);
