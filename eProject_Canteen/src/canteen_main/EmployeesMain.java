@@ -13,12 +13,12 @@ import canteen_login.LoginUser;
  *
  * @author My Computer
  */
-public class Main extends javax.swing.JFrame {
+public class EmployeesMain extends javax.swing.JFrame {
 
     /**
      * Creates new form Trangchu
      */
-    public Main() {
+    public EmployeesMain() {
         initComponents();
         
         this.setResizable(false);
@@ -41,10 +41,8 @@ public class Main extends javax.swing.JFrame {
         mainMenu = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        panelLogout = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         panelManage = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         panelAnalyze = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         menuBackground = new javax.swing.JLabel();
@@ -59,7 +57,7 @@ public class Main extends javax.swing.JFrame {
         jPanel2.add(bigLogo);
         bigLogo.setBounds(220, 20, 840, 210);
 
-        logoBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/034 Lemon Gate.png"))); // NOI18N
+        logoBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/010 Winter Neva.png"))); // NOI18N
         jPanel2.add(logoBackground);
         logoBackground.setBounds(1, 0, 1360, 250);
 
@@ -68,7 +66,7 @@ public class Main extends javax.swing.JFrame {
         mainMenu.setBackground(new java.awt.Color(255, 255, 255));
         mainMenu.setLayout(null);
 
-        panelMenu.setBackground(new java.awt.Color(153, 255, 153));
+        panelMenu.setBackground(new java.awt.Color(204, 255, 255));
         panelMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,50 +105,9 @@ public class Main extends javax.swing.JFrame {
         );
 
         mainMenu.add(panelMenu);
-        panelMenu.setBounds(290, 20, 240, 170);
+        panelMenu.setBounds(91, 129, 240, 170);
 
-        panelLogout.setBackground(new java.awt.Color(153, 255, 153));
-        panelLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelLogout.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelLogoutMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelLogoutMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelLogoutMouseExited(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Logout Rounded Left_96px.png"))); // NOI18N
-        jLabel4.setText("LOG OUT");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-
-        javax.swing.GroupLayout panelLogoutLayout = new javax.swing.GroupLayout(panelLogout);
-        panelLogout.setLayout(panelLogoutLayout);
-        panelLogoutLayout.setHorizontalGroup(
-            panelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLogoutLayout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(66, 66, 66))
-        );
-        panelLogoutLayout.setVerticalGroup(
-            panelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLogoutLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-
-        mainMenu.add(panelLogout);
-        panelLogout.setBounds(830, 250, 240, 170);
-
-        panelManage.setBackground(new java.awt.Color(153, 255, 153));
+        panelManage.setBackground(new java.awt.Color(204, 255, 255));
         panelManage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelManage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -164,34 +121,34 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Manager_100px.png"))); // NOI18N
-        jLabel5.setText("MANAGE");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Logout Rounded Left_96px.png"))); // NOI18N
+        jLabel4.setText("LOG OUT");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout panelManageLayout = new javax.swing.GroupLayout(panelManage);
         panelManage.setLayout(panelManageLayout);
         panelManageLayout.setHorizontalGroup(
             panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelManageLayout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
-                .addComponent(jLabel5)
+                .addContainerGap(66, Short.MAX_VALUE)
+                .addComponent(jLabel4)
                 .addGap(66, 66, 66))
         );
         panelManageLayout.setVerticalGroup(
             panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelManageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addComponent(jLabel4)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         mainMenu.add(panelManage);
-        panelManage.setBounds(290, 250, 240, 170);
+        panelManage.setBounds(1020, 129, 240, 170);
 
-        panelAnalyze.setBackground(new java.awt.Color(153, 255, 153));
+        panelAnalyze.setBackground(new java.awt.Color(204, 255, 255));
         panelAnalyze.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panelAnalyze.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -230,9 +187,9 @@ public class Main extends javax.swing.JFrame {
         );
 
         mainMenu.add(panelAnalyze);
-        panelAnalyze.setBounds(830, 20, 240, 170);
+        panelAnalyze.setBounds(550, 130, 240, 170);
 
-        menuBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/034 Lemon Gate.png"))); // NOI18N
+        menuBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/051 February Ink.png"))); // NOI18N
         mainMenu.add(menuBackground);
         menuBackground.setBounds(0, 0, 1360, 440);
 
@@ -272,15 +229,15 @@ public class Main extends javax.swing.JFrame {
         resetColor(panelAnalyze);
     }//GEN-LAST:event_panelAnalyzeMouseExited
 
-    private void panelLogoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelLogoutMouseEntered
+    private void panelManageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseEntered
         // TODO add your handling code here:
-        setColorMouseEntered(panelLogout);
-    }//GEN-LAST:event_panelLogoutMouseEntered
+        setColorMouseEntered(panelManage);
+    }//GEN-LAST:event_panelManageMouseEntered
 
-    private void panelLogoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelLogoutMouseExited
+    private void panelManageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseExited
         // TODO add your handling code here:
-        resetColor(panelLogout);
-    }//GEN-LAST:event_panelLogoutMouseExited
+        resetColor(panelManage);
+    }//GEN-LAST:event_panelManageMouseExited
 
     private void panelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMenuMouseClicked
         // TODO add your handling code here:
@@ -295,35 +252,20 @@ public class Main extends javax.swing.JFrame {
         setColorMouseClicked(panelAnalyze);
     }//GEN-LAST:event_panelAnalyzeMouseClicked
 
-    private void panelLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelLogoutMouseClicked
-        // TODO add your handling code here:
-        setColorMouseClicked(panelLogout);
-    }//GEN-LAST:event_panelLogoutMouseClicked
-
     private void panelManageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseClicked
         // TODO add your handling code here:
         setColorMouseClicked(panelManage);
     }//GEN-LAST:event_panelManageMouseClicked
-
-    private void panelManageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseEntered
-        // TODO add your handling code here:
-        setColorMouseEntered(panelManage);
-    }//GEN-LAST:event_panelManageMouseEntered
-
-    private void panelManageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseExited
-        // TODO add your handling code here:
-        resetColor(panelManage);
-    }//GEN-LAST:event_panelManageMouseExited
 public void setColorMouseEntered(JPanel panel){
-    panel.setBackground(new java.awt.Color(51, 255, 153));
+    panel.setBackground(new java.awt.Color(153, 255, 255));
 }
 
 public void resetColor(JPanel panel){
-    panel.setBackground(new java.awt.Color(153,255,153));
+    panel.setBackground(new java.awt.Color(204,255,255));
 }
 
 public void setColorMouseClicked(JPanel panel){
-    panel.setBackground(new java.awt.Color(0,204,102));
+    panel.setBackground(new java.awt.Color(102,255,255));
 }
     /**
      * @param args the command line arguments
@@ -342,14 +284,18 @@ public void setColorMouseClicked(JPanel panel){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeesMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeesMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeesMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeesMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -358,7 +304,7 @@ public void setColorMouseClicked(JPanel panel){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new EmployeesMain().setVisible(true);
             }
         });
     }
@@ -368,14 +314,12 @@ public void setColorMouseClicked(JPanel panel){
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logoBackground;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel menuBackground;
     private javax.swing.JPanel panelAnalyze;
-    private javax.swing.JPanel panelLogout;
     private javax.swing.JPanel panelManage;
     private javax.swing.JPanel panelMenu;
     // End of variables declaration//GEN-END:variables
