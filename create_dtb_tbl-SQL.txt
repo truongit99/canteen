@@ -1,12 +1,4 @@
-first of all
-----------------------------------
-
-create database canteen
-
-
-
-zo^ dtb canteen, excute all da command below 
---------------------------------------------
+create database canteen;
 
 create table productType(
     productTypeID int AUTO_INCREMENT,
@@ -58,3 +50,9 @@ create table adminAccount(
     adminPassword varchar(255),
     PRIMARY KEY (adminAccID)
 );
+
+insert into productType(productType) values ('Food');
+insert into productType(productType) values ('Drink');
+insert into productType(productType) values ('Study Tool');
+insert into productType(productType) values ('Other');
+
