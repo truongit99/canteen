@@ -45,6 +45,7 @@ public class EmployeesManage extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -56,25 +57,25 @@ public class EmployeesManage extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Downloads\\Undo2_48px.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Undo_48px.png"))); // NOI18N
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(10, 10, 48, 40);
+        jLabel6.setBounds(10, 0, 50, 50);
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Downloads\\Add User Male_48px.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Add User Male_48px.png"))); // NOI18N
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel5);
         jLabel5.setBounds(0, 370, 70, 60);
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Downloads\\Edit_48px.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Edit_48px.png"))); // NOI18N
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel7);
         jLabel7.setBounds(0, 532, 70, 60);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Downloads\\Trash Can_48px.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Trash Can_48px.png"))); // NOI18N
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel8);
         jLabel8.setBounds(0, 690, 70, 60);
@@ -147,10 +148,9 @@ public class EmployeesManage extends javax.swing.JFrame {
         jPanel3.add(jLabel3);
         jLabel3.setBounds(60, 30, 280, 190);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Downloads\\Search_48px.png")); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.add(jLabel4);
-        jLabel4.setBounds(1110, 20, 48, 50);
+        jLabel4.setBounds(1110, 20, 0, 50);
 
         jTextField1.setBackground(new java.awt.Color(229, 238, 206));
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -160,6 +160,10 @@ public class EmployeesManage extends javax.swing.JFrame {
         jTextField1.setBounds(800, 40, 300, 30);
         jPanel3.add(jSeparator1);
         jSeparator1.setBounds(800, 72, 310, 10);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Search_48px.png"))); // NOI18N
+        jPanel3.add(jLabel9);
+        jLabel9.setBounds(1110, 20, 60, 60);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/031 Blessing.png"))); // NOI18N
         jPanel3.add(jLabel2);
@@ -266,6 +270,7 @@ public class EmployeesManage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

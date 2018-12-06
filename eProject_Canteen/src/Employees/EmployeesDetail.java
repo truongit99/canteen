@@ -38,7 +38,6 @@ public class EmployeesDetail extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel5 = new javax.swing.JLabel();
-        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
@@ -54,6 +53,7 @@ public class EmployeesDetail extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,119 +103,76 @@ public class EmployeesDetail extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 153, 255));
         jLabel5.setText("Ngày Sinh");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, -1, -1));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 240, 10));
 
-        dateChooserCombo1.setCurrentView(new datechooser.view.appearance.AppearancesList("custom",
-            new datechooser.view.appearance.ViewAppearance("custom",
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    true,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 255),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(128, 128, 128),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(0, 0, 255),
-                    false,
-                    true,
-                    new datechooser.view.appearance.swing.LabelPainter()),
-                new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
-                    new java.awt.Color(0, 0, 0),
-                    new java.awt.Color(255, 0, 0),
-                    false,
-                    false,
-                    new datechooser.view.appearance.swing.ButtonPainter()),
-                (datechooser.view.BackRenderer)null,
-                false,
-                true)));
-    dateChooserCombo1.setCalendarBackground(new java.awt.Color(226, 239, 212));
-    jPanel1.add(dateChooserCombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 240, 30));
-    jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 240, 10));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel6.setText("Số Điện Thoại");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
 
-    jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-    jLabel6.setForeground(new java.awt.Color(0, 153, 255));
-    jLabel6.setText("Số Điện Thoại");
-    jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
+        jTextField3.setBackground(new java.awt.Color(229, 237, 204));
+        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextField3.setBorder(null);
+        jTextField3.setOpaque(false);
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 240, 30));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 240, 20));
 
-    jTextField3.setBackground(new java.awt.Color(229, 237, 204));
-    jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-    jTextField3.setBorder(null);
-    jTextField3.setOpaque(false);
-    jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 240, 30));
-    jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 240, 20));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel7.setText("Địa Chỉ");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, -1, -1));
 
-    jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-    jLabel7.setForeground(new java.awt.Color(0, 153, 255));
-    jLabel7.setText("Địa Chỉ");
-    jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, -1, -1));
+        jTextField4.setBackground(new java.awt.Color(232, 236, 199));
+        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextField4.setBorder(null);
+        jTextField4.setOpaque(false);
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 240, 30));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 240, 10));
 
-    jTextField4.setBackground(new java.awt.Color(232, 236, 199));
-    jTextField4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-    jTextField4.setBorder(null);
-    jTextField4.setOpaque(false);
-    jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 240, 30));
-    jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 240, 10));
+        kButton1.setText("kButton1");
+        kButton1.setkBorderRadius(50);
+        kButton1.setkStartColor(new java.awt.Color(153, 255, 204));
+        jPanel1.add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, -1, -1));
 
-    kButton1.setText("kButton1");
-    kButton1.setkBorderRadius(50);
-    kButton1.setkStartColor(new java.awt.Color(153, 255, 204));
-    jPanel1.add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, -1, -1));
+        kButton2.setText("kButton2");
+        kButton2.setkBorderRadius(50);
+        kButton2.setkStartColor(new java.awt.Color(102, 255, 255));
+        jPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, -1, -1));
 
-    kButton2.setText("kButton2");
-    kButton2.setkBorderRadius(50);
-    kButton2.setkStartColor(new java.awt.Color(102, 255, 255));
-    jPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, -1, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Calendar_32px.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 40, 30));
 
-    jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Calendar_32px.png"))); // NOI18N
-    jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 40, 30));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Gender_32px.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 40, 30));
 
-    jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Gender_32px.png"))); // NOI18N
-    jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 40, 30));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Identification Documents_32px.png"))); // NOI18N
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 40, 30));
 
-    jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Identification Documents_32px.png"))); // NOI18N
-    jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 40, 30));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Number Pad_32px.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 40, 30));
 
-    jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Number Pad_32px.png"))); // NOI18N
-    jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 40, 30));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Marker_32px.png"))); // NOI18N
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 40, 30));
 
-    jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Marker_32px.png"))); // NOI18N
-    jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 40, 30));
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/User Male_32px.png"))); // NOI18N
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 40, 30));
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 220, -1));
 
-    jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/User Male_32px.png"))); // NOI18N
-    jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 40, 30));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/031 Blessing.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 590));
 
-    jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/031 Blessing.png"))); // NOI18N
-    jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 590));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
-    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-    getContentPane().setLayout(layout);
-    layout.setHorizontalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-    );
-    layout.setVerticalGroup(
-        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    );
-
-    pack();
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -254,7 +211,7 @@ public class EmployeesDetail extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private datechooser.beans.DateChooserCombo dateChooserCombo1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
