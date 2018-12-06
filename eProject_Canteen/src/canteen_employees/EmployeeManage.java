@@ -11,12 +11,12 @@ import javax.swing.JPanel;
  *
  * @author Admin
  */
-public class EmployeesManage extends javax.swing.JFrame {
+public class EmployeeManage extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
-    public EmployeesManage() {
+    public EmployeeManage() {
         initComponents();
     }
 
@@ -31,25 +31,25 @@ public class EmployeesManage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        buttonBack = new javax.swing.JLabel();
+        buttonAddEmployee = new javax.swing.JLabel();
+        buttonEditEmployee = new javax.swing.JLabel();
+        buttonDeleteEmployee = new javax.swing.JLabel();
+        leftBackgroundEmployeeManage = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        logoEmployeesManage = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
+        textFieldSearch = new javax.swing.JTextField();
+        separatorSearchEmployee = new javax.swing.JSeparator();
+        buttonSearchEmployee = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tableInfomationEmployee = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,32 +57,32 @@ public class EmployeesManage extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Undo_48px.png"))); // NOI18N
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(10, 0, 50, 50);
+        buttonBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Undo_48px.png"))); // NOI18N
+        buttonBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(buttonBack);
+        buttonBack.setBounds(10, 0, 50, 50);
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Add User Male_48px.png"))); // NOI18N
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(0, 370, 70, 60);
+        buttonAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buttonAddEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Add User Male_48px.png"))); // NOI18N
+        buttonAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(buttonAddEmployee);
+        buttonAddEmployee.setBounds(0, 370, 70, 60);
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Edit_48px.png"))); // NOI18N
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel7);
-        jLabel7.setBounds(0, 532, 70, 60);
+        buttonEditEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buttonEditEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Edit_48px.png"))); // NOI18N
+        buttonEditEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(buttonEditEmployee);
+        buttonEditEmployee.setBounds(0, 532, 70, 60);
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Trash Can_48px.png"))); // NOI18N
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel8);
-        jLabel8.setBounds(0, 690, 70, 60);
+        buttonDeleteEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        buttonDeleteEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Trash Can_48px.png"))); // NOI18N
+        buttonDeleteEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(buttonDeleteEmployee);
+        buttonDeleteEmployee.setBounds(0, 690, 70, 60);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/031 Blessing.png"))); // NOI18N
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(0, 0, 70, 820);
+        leftBackgroundEmployeeManage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/031 Blessing.png"))); // NOI18N
+        jPanel2.add(leftBackgroundEmployeeManage);
+        leftBackgroundEmployeeManage.setBounds(0, 0, 70, 820);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -144,26 +144,26 @@ public class EmployeesManage extends javax.swing.JFrame {
 
         jPanel3.setLayout(null);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/header_logo.png"))); // NOI18N
-        jPanel3.add(jLabel3);
-        jLabel3.setBounds(60, 30, 280, 190);
+        logoEmployeesManage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/header_logo.png"))); // NOI18N
+        jPanel3.add(logoEmployeesManage);
+        logoEmployeesManage.setBounds(60, 30, 280, 190);
 
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel3.add(jLabel4);
         jLabel4.setBounds(1110, 20, 0, 50);
 
-        jTextField1.setBackground(new java.awt.Color(229, 238, 206));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.setBorder(null);
-        jTextField1.setOpaque(false);
-        jPanel3.add(jTextField1);
-        jTextField1.setBounds(800, 40, 300, 30);
-        jPanel3.add(jSeparator1);
-        jSeparator1.setBounds(800, 72, 310, 10);
+        textFieldSearch.setBackground(new java.awt.Color(229, 238, 206));
+        textFieldSearch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        textFieldSearch.setBorder(null);
+        textFieldSearch.setOpaque(false);
+        jPanel3.add(textFieldSearch);
+        textFieldSearch.setBounds(800, 40, 300, 30);
+        jPanel3.add(separatorSearchEmployee);
+        separatorSearchEmployee.setBounds(800, 72, 310, 10);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Search_48px.png"))); // NOI18N
-        jPanel3.add(jLabel9);
-        jLabel9.setBounds(1110, 20, 60, 60);
+        buttonSearchEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Search_48px.png"))); // NOI18N
+        jPanel3.add(buttonSearchEmployee);
+        buttonSearchEmployee.setBounds(1110, 20, 60, 60);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/031 Blessing.png"))); // NOI18N
         jPanel3.add(jLabel2);
@@ -173,8 +173,8 @@ public class EmployeesManage extends javax.swing.JFrame {
 
         jPanel9.setLayout(null);
 
-        jTable2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tableInfomationEmployee.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        tableInfomationEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"01", "fasfa", "gdasdg", "456456", "Male", "aqsdas"},
                 {"02", "dasd", "gasfa", "12345", "Female", "dasf"},
@@ -193,11 +193,11 @@ public class EmployeesManage extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable2.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable2.setRowHeight(20);
-        jTable2.setSelectionBackground(new java.awt.Color(233, 235, 197));
-        jTable2.setSelectionForeground(new java.awt.Color(51, 51, 51));
-        jScrollPane2.setViewportView(jTable2);
+        tableInfomationEmployee.setGridColor(new java.awt.Color(255, 255, 255));
+        tableInfomationEmployee.setRowHeight(20);
+        tableInfomationEmployee.setSelectionBackground(new java.awt.Color(233, 235, 197));
+        tableInfomationEmployee.setSelectionForeground(new java.awt.Color(51, 51, 51));
+        jScrollPane2.setViewportView(tableInfomationEmployee);
 
         jPanel9.add(jScrollPane2);
         jScrollPane2.setBounds(2, 2, 1180, 540);
@@ -236,14 +236,18 @@ public class EmployeesManage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EmployeesManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EmployeesManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EmployeesManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EmployeesManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmployeeManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -252,7 +256,7 @@ public class EmployeesManage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EmployeesManage().setVisible(true);
+                new EmployeeManage().setVisible(true);
             }
         });
     }
@@ -262,15 +266,13 @@ public class EmployeesManage extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel buttonAddEmployee;
+    private javax.swing.JLabel buttonBack;
+    private javax.swing.JLabel buttonDeleteEmployee;
+    private javax.swing.JLabel buttonEditEmployee;
+    private javax.swing.JLabel buttonSearchEmployee;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -280,8 +282,10 @@ public class EmployeesManage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel leftBackgroundEmployeeManage;
+    private javax.swing.JLabel logoEmployeesManage;
+    private javax.swing.JSeparator separatorSearchEmployee;
+    private javax.swing.JTable tableInfomationEmployee;
+    private javax.swing.JTextField textFieldSearch;
     // End of variables declaration//GEN-END:variables
 }

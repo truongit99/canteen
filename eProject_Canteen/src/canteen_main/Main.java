@@ -7,7 +7,7 @@ package canteen_main;
 
 import javafx.scene.paint.Color;
 import javax.swing.JPanel;
-import canteen_login.LoginUser;
+import canteen_login.LoginEmployee;
 
 /**
  *
@@ -286,7 +286,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColorMouseClicked(panelMenu);
         
-        //LoginUser lo = new LoginUser();
+        //LoginUser lo = new LoginEmployee();
         //lo.show();
     }//GEN-LAST:event_panelMenuMouseClicked
 
