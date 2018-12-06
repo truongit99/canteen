@@ -4,19 +4,19 @@ zô dtb canteen, excute all da command below
 --------------------------------------------
 
 create table productType(
-	productTypeID varchar(255),
+	productTypeID int AUTO_INCREMENT,
     productType varchar(255),
     PRIMARY KEY (productTypeID)
 );
 
 create table productPrice(
-	productID varchar(255),
+	productID int AUTO_INCREMENT,
     price float,
     PRIMARY KEY (productID)
 );
 
 create table employee(
-	employeeID varchar(255),
+	employeeID int AUTO_INCREMENT,
     employeeName varchar(255),
     employeeSex bit,
     employeeDOB Date,
@@ -26,25 +26,25 @@ create table employee(
 );
 
 create table productMenu(
-    productID varchar(255),
+    productID int AUTO_INCREMENT,
     productName varchar(255),
-    productTypeID varchar(255),
+    productTypeID int,
     PRIMARY KEY (productID),
     FOREIGN KEY (productTypeID) REFERENCES productType(productTypeID)
 );
 
 create table bill(
-	billID varchar(255),
+	billID int AUTO_INCREMENT,
     purchaseDate DateTime,
     totalPrice float,
-    employeeID varchar(255),
+    employeeID int,
     PRIMARY KEY (billID),
     FOREIGN KEY (employeeID) REFERENCES employee(employeeID)
 );
 
 create table billDetail(
-	billID int,
-    productID varchar(255),
+	billID int AUTO_INCREMENT,
+    productID int,
     quantity int,
     PRIMARY KEY (billID),
     FOREIGN KEY (productID) REFERENCES productPrice(productID)
