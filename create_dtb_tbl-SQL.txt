@@ -43,10 +43,9 @@ create table bill(
 );
 
 create table billDetail(
-	billID int AUTO_INCREMENT,
+	billID int,
     productID int,
     quantity int,
-    PRIMARY KEY (billID),
-    FOREIGN KEY (productID) REFERENCES productPrice(productID)
+    FOREIGN KEY (productID) REFERENCES productPrice(productID),
+    FOREIGN KEY (billID) REFERENCES bill(billID)
 );
-
