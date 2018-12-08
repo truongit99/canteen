@@ -111,10 +111,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="labelUserName" min="-2" max="-2" attributes="0"/>
-                          <Component id="textFieldUserName" pref="341" max="32767" attributes="0"/>
+                          <Component id="txtFieldUserName" pref="341" max="32767" attributes="0"/>
                           <Component id="seperatorUserName" alignment="0" pref="341" max="32767" attributes="0"/>
                           <Component id="labelPassword" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="textFieldPassword" alignment="0" pref="341" max="32767" attributes="0"/>
+                          <Component id="txtFieldPassword" alignment="0" pref="341" max="32767" attributes="0"/>
                           <Component id="seperatorPassword" alignment="0" pref="341" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -143,7 +143,7 @@
                       <Component id="labelUserName" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="textFieldUserName" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtFieldUserName" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="iconUserName" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -152,7 +152,7 @@
                       <Component id="labelPassword" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="textFieldPassword" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="txtFieldPassword" min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="iconPassword" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -186,7 +186,7 @@
                 <Property name="text" type="java.lang.String" value="T&#xe0;i Kho&#x1ea3;n"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="textFieldUserName">
+            <Component class="javax.swing.JTextField" name="txtFieldUserName">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -209,7 +209,7 @@
                 <Property name="text" type="java.lang.String" value="M&#x1ead;t Kh&#x1ea9;u"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="textFieldPassword">
+            <Component class="javax.swing.JPasswordField" name="txtFieldPassword">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -247,21 +247,12 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
-                <Property name="kBackGroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="cc" red="0" type="rgb"/>
-                </Property>
                 <Property name="kBorderRadius" type="int" value="50"/>
                 <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="ff" red="66" type="rgb"/>
+                  <Color blue="cc" green="ff" red="66" type="rgb"/>
                 </Property>
-                <Property name="kForeGround" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="kHoverForeGround" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="kHoverStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="99" red="0" type="rgb"/>
+                <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="ff" red="0" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
@@ -274,21 +265,9 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
-                <Property name="kBackGroundColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="cc" red="0" type="rgb"/>
-                </Property>
                 <Property name="kBorderRadius" type="int" value="50"/>
                 <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="ff" red="66" type="rgb"/>
-                </Property>
-                <Property name="kForeGround" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="kHoverForeGround" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="kHoverStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="99" red="0" type="rgb"/>
                 </Property>
               </Properties>
             </Component>

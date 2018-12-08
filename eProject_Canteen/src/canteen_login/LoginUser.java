@@ -2,9 +2,9 @@ package canteen_login;
 
 import canteen_main.Main;
 
-public class LoginEmployee extends javax.swing.JFrame {    
+public class LoginUser extends javax.swing.JFrame {    
     
-    public LoginEmployee() {
+    public LoginUser() {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -21,10 +21,10 @@ public class LoginEmployee extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         labelTitle = new javax.swing.JLabel();
         labelUserName = new javax.swing.JLabel();
-        textFieldUserName = new javax.swing.JTextField();
+        txtFieldUserName = new javax.swing.JTextField();
         seperatorUserName = new javax.swing.JSeparator();
         labelPassword = new javax.swing.JLabel();
-        textFieldPassword = new javax.swing.JPasswordField();
+        txtFieldPassword = new javax.swing.JPasswordField();
         seperatorPassword = new javax.swing.JSeparator();
         iconUserName = new javax.swing.JLabel();
         iconPassword = new javax.swing.JLabel();
@@ -59,16 +59,16 @@ public class LoginEmployee extends javax.swing.JFrame {
         labelUserName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelUserName.setText("Tài Khoản");
 
-        textFieldUserName.setBackground(new java.awt.Color(204, 255, 204));
-        textFieldUserName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        textFieldUserName.setBorder(null);
+        txtFieldUserName.setBackground(new java.awt.Color(204, 255, 204));
+        txtFieldUserName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtFieldUserName.setBorder(null);
 
         labelPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelPassword.setText("Mật Khẩu");
 
-        textFieldPassword.setBackground(new java.awt.Color(204, 255, 204));
-        textFieldPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        textFieldPassword.setBorder(null);
+        txtFieldPassword.setBackground(new java.awt.Color(204, 255, 204));
+        txtFieldPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtFieldPassword.setBorder(null);
 
         iconUserName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/User_32px.png"))); // NOI18N
 
@@ -77,22 +77,15 @@ public class LoginEmployee extends javax.swing.JFrame {
         kButton1.setForeground(new java.awt.Color(0, 0, 0));
         kButton1.setText("Thoát");
         kButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        kButton1.setkBackGroundColor(new java.awt.Color(0, 204, 102));
         kButton1.setkBorderRadius(50);
-        kButton1.setkEndColor(new java.awt.Color(102, 255, 153));
-        kButton1.setkForeGround(new java.awt.Color(0, 0, 0));
-        kButton1.setkHoverForeGround(new java.awt.Color(0, 0, 0));
-        kButton1.setkHoverStartColor(new java.awt.Color(0, 153, 102));
+        kButton1.setkEndColor(new java.awt.Color(102, 255, 204));
+        kButton1.setkStartColor(new java.awt.Color(0, 255, 153));
 
         kButton2.setForeground(new java.awt.Color(0, 0, 0));
         kButton2.setText("Đăng Nhập");
         kButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        kButton2.setkBackGroundColor(new java.awt.Color(0, 204, 102));
         kButton2.setkBorderRadius(50);
         kButton2.setkEndColor(new java.awt.Color(102, 255, 153));
-        kButton2.setkForeGround(new java.awt.Color(0, 0, 0));
-        kButton2.setkHoverForeGround(new java.awt.Color(0, 0, 0));
-        kButton2.setkHoverStartColor(new java.awt.Color(0, 153, 102));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -109,10 +102,10 @@ public class LoginEmployee extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(labelUserName)
-                    .addComponent(textFieldUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                    .addComponent(txtFieldUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                     .addComponent(seperatorUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                     .addComponent(labelPassword)
-                    .addComponent(textFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                    .addComponent(txtFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                     .addComponent(seperatorPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -135,7 +128,7 @@ public class LoginEmployee extends javax.swing.JFrame {
                 .addComponent(labelUserName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(textFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconUserName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(seperatorUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,7 +136,7 @@ public class LoginEmployee extends javax.swing.JFrame {
                 .addComponent(labelPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconPassword))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(seperatorPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,18 +181,14 @@ public class LoginEmployee extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginEmployee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -208,7 +197,7 @@ public class LoginEmployee extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginEmployee().setVisible(true);
+                new LoginUser().setVisible(true);
             }
         });
     }
@@ -228,7 +217,7 @@ public class LoginEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel logo;
     private javax.swing.JSeparator seperatorPassword;
     private javax.swing.JSeparator seperatorUserName;
-    private javax.swing.JPasswordField textFieldPassword;
-    private javax.swing.JTextField textFieldUserName;
+    private javax.swing.JPasswordField txtFieldPassword;
+    private javax.swing.JTextField txtFieldUserName;
     // End of variables declaration//GEN-END:variables
 }

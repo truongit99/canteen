@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/TrungMin/Desktop/eProject_Canteen/src/canteen_main/Main.java</file>
-            <file>file:/C:/Users/TrungMin/Desktop/eProject_Canteen/src/canteen_employees/EmployeeDetail.java</file>
-            <file>file:/C:/Users/TrungMin/Desktop/eProject_Canteen/src/canteen_main/EmployeesMain.java</file>
-            <file>file:/C:/Users/TrungMin/Desktop/eProject_Canteen/src/canteen_employees/EmployeeManage.java</file>
-            <file>file:/C:/Users/TrungMin/Desktop/eProject_Canteen/src/Product/NewJFrame.java</file>
-            <file>file:/C:/Users/TrungMin/Desktop/eProject_Canteen/src/canteen_login/LoginEmployee.java</file>
+            <file>file:/D:/GITHUB/canteen/eProject_Canteen/src/canteen_login/LoginUser.java</file>
+            <file>file:/D:/GITHUB/canteen/eProject_Canteen/src/Employees/EmployeesDetail.java</file>
+            <file>file:/D:/GITHUB/canteen/eProject_Canteen/src/Employees/EmployeesManage.java</file>
         </group>
     </open-files>
 </project-private>
