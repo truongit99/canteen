@@ -28,6 +28,11 @@ public class LoginUser extends javax.swing.JFrame {
         seperatorPassword = new javax.swing.JSeparator();
         iconUserName = new javax.swing.JLabel();
         iconPassword = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        kButton1 = new keeptoo.KButton();
+        kButton2 = new keeptoo.KButton();
+>>>>>>> parent of de64758... done design
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Đăng nhập tài khoản");
@@ -72,6 +77,22 @@ public class LoginUser extends javax.swing.JFrame {
 
         iconPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Key 2_32px.png"))); // NOI18N
 
+<<<<<<< HEAD
+=======
+        kButton1.setForeground(new java.awt.Color(0, 0, 0));
+        kButton1.setText("Thoát");
+        kButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        kButton1.setkBorderRadius(50);
+        kButton1.setkEndColor(new java.awt.Color(102, 255, 204));
+        kButton1.setkStartColor(new java.awt.Color(0, 255, 153));
+
+        kButton2.setForeground(new java.awt.Color(0, 0, 0));
+        kButton2.setText("Đăng Nhập");
+        kButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        kButton2.setkBorderRadius(50);
+        kButton2.setkEndColor(new java.awt.Color(102, 255, 153));
+
+>>>>>>> parent of de64758... done design
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -94,9 +115,21 @@ public class LoginUser extends javax.swing.JFrame {
                     .addComponent(seperatorPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addContainerGap(116, Short.MAX_VALUE)
                 .addComponent(labelTitle)
                 .addGap(95, 95, 95))
+=======
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelTitle)
+                .addGap(95, 95, 95))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 83, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(74, 74, 74))
+>>>>>>> parent of de64758... done design
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +152,15 @@ public class LoginUser extends javax.swing.JFrame {
                     .addComponent(iconPassword))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(seperatorPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(272, Short.MAX_VALUE))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
+>>>>>>> parent of de64758... done design
         );
 
         jPanel1.add(jPanel3);
@@ -183,6 +224,11 @@ public class LoginUser extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+<<<<<<< HEAD
+=======
+    private keeptoo.KButton kButton1;
+    private keeptoo.KButton kButton2;
+>>>>>>> parent of de64758... done design
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelTitle;
     private javax.swing.JLabel labelUserName;

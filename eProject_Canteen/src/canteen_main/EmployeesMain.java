@@ -7,7 +7,7 @@ package canteen_main;
 
 import javafx.scene.paint.Color;
 import javax.swing.JPanel;
-import canteen_login.LoginEmployee;
+import canteen_login.LoginUser;
 
 /**
  *
@@ -189,7 +189,7 @@ public class EmployeesMain extends javax.swing.JFrame {
         mainMenu.add(panelAnalyze);
         panelAnalyze.setBounds(550, 130, 240, 170);
 
-        menuBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/043 New York.png"))); // NOI18N
+        menuBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Downloads\\gardient\\023 Rare Wind.png")); // NOI18N
         mainMenu.add(menuBackground);
         menuBackground.setBounds(0, 0, 1360, 440);
 
@@ -243,7 +243,7 @@ public class EmployeesMain extends javax.swing.JFrame {
         // TODO add your handling code here:
         setColorMouseClicked(panelMenu);
         
-        //LoginUser lo = new LoginEmployee();
+        //LoginUser lo = new LoginUser();
         //lo.show();
     }//GEN-LAST:event_panelMenuMouseClicked
 
