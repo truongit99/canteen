@@ -49,6 +49,7 @@ public class ProductDetail extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        kGradientPanel2.setkBorderRadius(0);
         kGradientPanel2.setkEndColor(new java.awt.Color(153, 255, 153));
         kGradientPanel2.setkStartColor(new java.awt.Color(0, 204, 204));
 
@@ -214,9 +215,7 @@ public class ProductDetail extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 807, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+            .addComponent(kGradientPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 807, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

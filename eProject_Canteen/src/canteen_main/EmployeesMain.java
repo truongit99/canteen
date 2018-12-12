@@ -83,7 +83,7 @@ public class EmployeesMain extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Food_96px.png"))); // NOI18N
-        jLabel1.setText("MENU");
+        jLabel1.setText("Thực Đơn");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -94,7 +94,7 @@ public class EmployeesMain extends javax.swing.JFrame {
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(jLabel1)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +124,7 @@ public class EmployeesMain extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Logout Rounded Left_96px.png"))); // NOI18N
-        jLabel4.setText("LOG OUT");
+        jLabel4.setText("Đăng Xuất");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -133,9 +133,9 @@ public class EmployeesMain extends javax.swing.JFrame {
         panelManageLayout.setHorizontalGroup(
             panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelManageLayout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(66, 66, 66))
+                .addGap(58, 58, 58))
         );
         panelManageLayout.setVerticalGroup(
             panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +165,7 @@ public class EmployeesMain extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Purchase Order_96px.png"))); // NOI18N
-        jLabel2.setText("BILL");
+        jLabel2.setText("Hóa Đơn");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -176,7 +176,7 @@ public class EmployeesMain extends javax.swing.JFrame {
             .addGroup(panelAnalyzeLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(jLabel2)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         panelAnalyzeLayout.setVerticalGroup(
             panelAnalyzeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

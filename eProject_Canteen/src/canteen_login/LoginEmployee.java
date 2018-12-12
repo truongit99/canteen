@@ -52,7 +52,7 @@ public class LoginEmployee extends javax.swing.JFrame {
         leftBackground.setBounds(0, 0, 420, 610);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 420, 630);
+        jPanel2.setBounds(0, 0, 420, 610);
 
         jPanel3.setBackground(new java.awt.Color(224, 235, 240));
 
