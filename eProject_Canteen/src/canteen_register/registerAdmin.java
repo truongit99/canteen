@@ -5,17 +5,30 @@
  */
 package canteen_register;
 
+import canteen_connection.Connect;
+import canteen_encrypt.EncryptSHA1;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+import java.sql.Connection;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Admin
  */
 public class registerAdmin extends javax.swing.JFrame {
 
+    Connection conn;
+    Statement st;
+    
     /**
      * Creates new form registerAdmin
      */
     public registerAdmin() {
         initComponents();
+        
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,13 +45,14 @@ public class registerAdmin extends javax.swing.JFrame {
         labelIconRegister = new javax.swing.JLabel();
         labelTextfieldUsername = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        textfieldUsername = new javax.swing.JTextField();
+        textFieldUsername = new javax.swing.JTextField();
         labelTextfieldPassword = new javax.swing.JLabel();
-        textfieldPassword = new javax.swing.JPasswordField();
+        textFieldPassword = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         buttonRegister = new keeptoo.KButton();
+        buttonCancel = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,19 +73,19 @@ public class registerAdmin extends javax.swing.JFrame {
         jPanel1.add(labelTextfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 350, -1));
 
-        textfieldUsername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        textfieldUsername.setBorder(null);
-        textfieldUsername.setOpaque(false);
-        jPanel1.add(textfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 350, 30));
+        textFieldUsername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        textFieldUsername.setBorder(null);
+        textFieldUsername.setOpaque(false);
+        jPanel1.add(textFieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 350, 30));
 
         labelTextfieldPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelTextfieldPassword.setForeground(new java.awt.Color(102, 102, 102));
         labelTextfieldPassword.setText("Mật khẩu");
         jPanel1.add(labelTextfieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
-        textfieldPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        textfieldPassword.setBorder(null);
-        jPanel1.add(textfieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 350, 30));
+        textFieldPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        textFieldPassword.setBorder(null);
+        jPanel1.add(textFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 350, 30));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 360, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Key_32px.png"))); // NOI18N
@@ -88,7 +102,27 @@ public class registerAdmin extends javax.swing.JFrame {
         buttonRegister.setkEndColor(new java.awt.Color(102, 255, 153));
         buttonRegister.setkHoverForeGround(new java.awt.Color(0, 0, 0));
         buttonRegister.setkHoverStartColor(new java.awt.Color(0, 153, 102));
-        jPanel1.add(buttonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, -1));
+        buttonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonRegisterActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
+
+        buttonCancel.setBorder(null);
+        buttonCancel.setText("Hủy");
+        buttonCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonCancel.setkBackGroundColor(new java.awt.Color(0, 204, 102));
+        buttonCancel.setkBorderRadius(50);
+        buttonCancel.setkEndColor(new java.awt.Color(102, 255, 153));
+        buttonCancel.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        buttonCancel.setkHoverStartColor(new java.awt.Color(0, 153, 102));
+        buttonCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, -1, -1));
 
         kGradientPanel1.add(jPanel1);
         jPanel1.setBounds(80, 80, 440, 520);
@@ -106,6 +140,37 @@ public class registerAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelActionPerformed
+        // TODO add your handling code here:
+        //this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_buttonCancelActionPerformed
+
+    private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
+        // TODO add your handling code here:
+        String username = textFieldUsername.getText();
+        
+        try {
+            String password = EncryptSHA1.sha1(textFieldPassword.getText());
+        if (username.equals("") || password.equals("")) {
+            JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
+        } else {
+                conn = Connect.getConnection();
+                st = conn.createStatement();
+                st.executeUpdate(String.format("insert into adminaccount (adminAccID, adminUserName, adminPassword) VALUES (NULL, '%s', '%s')", username, password));
+                
+                JOptionPane.showMessageDialog(this, "Admin account added successfully", "Success", 1);
+                this.setVisible(false);
+                
+        }
+        } catch (MySQLIntegrityConstraintViolationException e) {
+            JOptionPane.showMessageDialog(this, "Username '"+username+"' is not available", "Error", 1);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+            
+        }
+    }//GEN-LAST:event_buttonRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,6 +208,7 @@ public class registerAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private keeptoo.KButton buttonCancel;
     private keeptoo.KButton buttonRegister;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -153,7 +219,7 @@ public class registerAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel labelIconRegister;
     private javax.swing.JLabel labelTextfieldPassword;
     private javax.swing.JLabel labelTextfieldUsername;
-    private javax.swing.JPasswordField textfieldPassword;
-    private javax.swing.JTextField textfieldUsername;
+    private javax.swing.JPasswordField textFieldPassword;
+    private javax.swing.JTextField textFieldUsername;
     // End of variables declaration//GEN-END:variables
 }

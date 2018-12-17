@@ -131,8 +131,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="kButton1" min="-2" pref="273" max="-2" attributes="0"/>
-                                  <Component id="kButton2" min="-2" pref="273" max="-2" attributes="0"/>
+                                  <Component id="buttonCancel" min="-2" pref="273" max="-2" attributes="0"/>
+                                  <Component id="buttonLogIn" min="-2" pref="273" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -164,9 +164,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="seperatorPassword" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace pref="59" max="32767" attributes="0"/>
-                      <Component id="kButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonLogIn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="kButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="buttonCancel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -247,7 +247,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="keeptoo.KButton" name="kButton1">
+            <Component class="keeptoo.KButton" name="buttonCancel">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -273,8 +273,11 @@
                   <Color blue="66" green="99" red="0" type="rgb"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCancelActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="keeptoo.KButton" name="kButton2">
+            <Component class="keeptoo.KButton" name="buttonLogIn">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
@@ -300,6 +303,9 @@
                   <Color blue="66" green="99" red="0" type="rgb"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonLogInActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

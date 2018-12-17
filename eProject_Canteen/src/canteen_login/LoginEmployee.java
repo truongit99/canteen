@@ -1,8 +1,16 @@
 package canteen_login;
 
-import canteen_main.AdminMain;
+import canteen_connection.Connect;
+import canteen_encrypt.EncryptSHA1;
+import canteen_main.EmployeesMain;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 public class LoginEmployee extends javax.swing.JFrame {    
+    
+    Connection conn;
+    PreparedStatement pst;
+    ResultSet rs;
     
     public LoginEmployee() {
         initComponents();
@@ -89,6 +97,11 @@ public class LoginEmployee extends javax.swing.JFrame {
         buttonCancel.setkForeGround(new java.awt.Color(0, 0, 0));
         buttonCancel.setkHoverForeGround(new java.awt.Color(0, 0, 0));
         buttonCancel.setkHoverStartColor(new java.awt.Color(0, 153, 102));
+        buttonCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelActionPerformed(evt);
+            }
+        });
 
         buttonLogIn.setForeground(new java.awt.Color(0, 0, 0));
         buttonLogIn.setText("Đăng Nhập");
@@ -99,6 +112,11 @@ public class LoginEmployee extends javax.swing.JFrame {
         buttonLogIn.setkForeGround(new java.awt.Color(0, 0, 0));
         buttonLogIn.setkHoverForeGround(new java.awt.Color(0, 0, 0));
         buttonLogIn.setkHoverStartColor(new java.awt.Color(0, 153, 102));
+        buttonLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogInActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Bấm Vào");
@@ -107,6 +125,11 @@ public class LoginEmployee extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 255));
         jLabel3.setText("Đây");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Để Đăng Nhập Bằng Tài Khoản Admin");
@@ -208,6 +231,49 @@ public class LoginEmployee extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
+        // TODO add your handling code here:
+        try {
+        String username = textFieldUserName.getText();
+        String password = EncryptSHA1.sha1(textFieldPassword.getText());
+        
+        if (username.equals("") || password.equals("")) {
+            JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
+        } else {
+                conn = Connect.getConnection();
+                pst = conn.prepareStatement("select * from employee where employeeUserName=? and employeePassword=?");
+                
+                pst.setString(1, username);
+                pst.setString(2, password);
+                
+                rs = pst.executeQuery();
+                
+                if (rs.next()) {
+                    EmployeesMain empMain = new EmployeesMain();
+                    empMain.setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "User Name or Password is wrong", "Error", 1);
+                }
+        }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+        }
+    }//GEN-LAST:event_buttonLogInActionPerformed
+
+    private void buttonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_buttonCancelActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        
+        LoginAdmin la = new LoginAdmin();
+        la.setVisible(true);
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments

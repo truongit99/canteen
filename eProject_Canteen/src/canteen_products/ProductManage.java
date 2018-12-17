@@ -5,22 +5,93 @@
  */
 package canteen_products;
 
-import canteen_employees.*;
-import javax.swing.JPanel;
+import canteen_connection.Connect;
+import java.awt.Cursor;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Admin
  */
 public class ProductManage extends javax.swing.JFrame {
-
+    
+    Product product;
+    DefaultTableModel model;
+    Connection conn;
+    Statement st;
+    ResultSet rs;
+    
     /**
      * Creates new form NewJFrame
      */
     public ProductManage() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        
+//        loadTable();
+        showProductInTable();
+    }
+    
+    
+    public ArrayList<Product> getProductList() {
+        
+            ArrayList<Product> productList = new ArrayList<Product>();
+             
+            conn = Connect.getConnection();
+            String s = "SELECT * FROM productmenu LEFT JOIN producttype on productmenu.productTypeID = producttype.productTypeID";
+            
+            try {
+            st = conn.createStatement();
+            rs = st.executeQuery(s);
+            
+            
+            while (rs.next()) {
+                product = new Product(rs.getString("productID"), rs.getString("productName"), rs.getString("productType"), rs.getString("price"));
+                productList.add(product);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+        }
+            return productList;
     }
 
+    public void showProductInTable() {
+        ArrayList<Product> list = getProductList();
+        
+        model = (DefaultTableModel) tableProductMenu.getModel();
+        
+        Object[] row = new Object[4];
+        for (int i=0;i<list.size();i++) {
+            row[0] = list.get(i).getProductID();
+            row[1] = list.get(i).getProductName();
+            row[2] = list.get(i).getProductTypeID();
+            row[3] = list.get(i).getPrice();
+            
+            model.addRow(row);
+        }
+    }
+    
+    public void showItem(int index) {
+        ProductEdit prodEdit = new ProductEdit();
+        
+        prodEdit.setTitle(getProductList().get(index).getProductName());
+        prodEdit.textfieldProductID.setText(getProductList().get(index).getProductID());
+        prodEdit.textfieldProductName.setText(getProductList().get(index).getProductName());
+        prodEdit.comboBoxProductType.setSelectedItem(getProductList().get(index).getProductTypeID());
+        prodEdit.textfieldProductPrice.setText(getProductList().get(index).getPrice());
+        
+        prodEdit.setVisible(true);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,7 +103,6 @@ public class ProductManage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        buttonBack = new javax.swing.JLabel();
         buttonAdd = new javax.swing.JLabel();
         buttonEdit = new javax.swing.JLabel();
         buttonDelete = new javax.swing.JLabel();
@@ -42,9 +112,10 @@ public class ProductManage extends javax.swing.JFrame {
         textFieldSearch = new javax.swing.JTextField();
         separatorSearch = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableProductMenu = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Mặt hàng");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -53,20 +124,33 @@ public class ProductManage extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 204, 204));
         kGradientPanel1.setLayout(null);
 
-        buttonBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Undo_48px.png"))); // NOI18N
-        buttonBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        kGradientPanel1.add(buttonBack);
-        buttonBack.setBounds(10, 4, 48, 40);
-
         buttonAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Add_50px.png"))); // NOI18N
+        buttonAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonAddMouseClicked(evt);
+            }
+        });
         kGradientPanel1.add(buttonAdd);
         buttonAdd.setBounds(10, 370, 50, 50);
 
         buttonEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Edit_48px.png"))); // NOI18N
+        buttonEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonEditMouseClicked(evt);
+            }
+        });
         kGradientPanel1.add(buttonEdit);
         buttonEdit.setBounds(10, 550, 50, 40);
 
         buttonDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Trash Can_48px.png"))); // NOI18N
+        buttonDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDeleteMouseClicked(evt);
+            }
+        });
         kGradientPanel1.add(buttonDelete);
         buttonDelete.setBounds(10, 714, 50, 40);
 
@@ -95,22 +179,35 @@ public class ProductManage extends javax.swing.JFrame {
 
         jPanel1.add(kGradientPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1180, -1));
 
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableProductMenu.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        tableProductMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "ProductName", "ProductType", "Price"
             }
-        ));
-        jTable1.setGridColor(new java.awt.Color(255, 255, 255));
-        jTable1.setSelectionBackground(new java.awt.Color(233, 235, 197));
-        jTable1.setSelectionForeground(new java.awt.Color(51, 51, 51));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableProductMenu.setEditingColumn(0);
+        tableProductMenu.setEditingRow(0);
+        tableProductMenu.setGridColor(new java.awt.Color(255, 255, 255));
+        tableProductMenu.setSelectionBackground(new java.awt.Color(233, 235, 197));
+        tableProductMenu.setSelectionForeground(new java.awt.Color(51, 51, 51));
+        jScrollPane1.setViewportView(tableProductMenu);
+        if (tableProductMenu.getColumnModel().getColumnCount() > 0) {
+            tableProductMenu.getColumnModel().getColumn(0).setResizable(false);
+            tableProductMenu.getColumnModel().getColumn(1).setResizable(false);
+            tableProductMenu.getColumnModel().getColumn(2).setResizable(false);
+            tableProductMenu.getColumnModel().getColumn(3).setResizable(false);
+        }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 1180, 540));
 
@@ -127,6 +224,51 @@ public class ProductManage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonAddMouseClicked
+        // TODO add your handling code here:
+        ProductAdd prodAdd = new ProductAdd();
+        prodAdd.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttonAddMouseClicked
+
+    private void buttonEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditMouseClicked
+        // TODO add your handling code here:
+        
+        try {
+            int index = tableProductMenu.getSelectedRow();
+            showItem(index);
+            this.dispose();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(this, "Please choose a product to edit", "Message", 1);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+        }
+        
+    }//GEN-LAST:event_buttonEditMouseClicked
+
+    private void buttonDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDeleteMouseClicked
+        // TODO add your handling code here:
+        try {
+                conn = Connect.getConnection();
+                st = conn.createStatement();
+                
+                
+                int index = tableProductMenu.getSelectedRow();
+                int id = Integer.parseInt(getProductList().get(index).getProductID());
+                
+                st.executeUpdate(String.format("delete from productMenu where productID=%d", id));
+                
+                JOptionPane.showMessageDialog(this, "Product deleted successfully", "Success", 1);
+                
+                model.setRowCount(0);
+                this.showProductInTable();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(this, "Please choose a product to delete", "Message", 1);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+        }
+    }//GEN-LAST:event_buttonDeleteMouseClicked
 
     
     /**
@@ -185,17 +327,16 @@ public class ProductManage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel buttonAdd;
-    private javax.swing.JLabel buttonBack;
     private javax.swing.JLabel buttonDelete;
     private javax.swing.JLabel buttonEdit;
     private javax.swing.JLabel buttonSearch;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private keeptoo.KGradientPanel kGradientPanel1;
     private keeptoo.KGradientPanel kGradientPanel2;
     private javax.swing.JLabel logo;
     private javax.swing.JSeparator separatorSearch;
+    private javax.swing.JTable tableProductMenu;
     private javax.swing.JTextField textFieldSearch;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,9 +5,12 @@
  */
 package canteen_main;
 
+import canteen_login.LoginAdmin;
 import javafx.scene.paint.Color;
 import javax.swing.JPanel;
 import canteen_login.LoginEmployee;
+import canteen_products.ProductManage;
+import canteen_register.registerAdmin;
 
 /**
  *
@@ -371,9 +374,9 @@ public class AdminMain extends javax.swing.JFrame {
     private void panelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMenuMouseClicked
         // TODO add your handling code here:
         setColorMouseClicked(panelMenu);
+        ProductManage prodMng = new ProductManage();
+        prodMng.setVisible(true);
         
-        //LoginUser lo = new LoginEmployee();
-        //lo.show();
     }//GEN-LAST:event_panelMenuMouseClicked
 
     private void panelBillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBillMouseClicked
@@ -384,6 +387,10 @@ public class AdminMain extends javax.swing.JFrame {
     private void panelLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelLogoutMouseClicked
         // TODO add your handling code here:
         setColorMouseClicked(panelLogout);
+        
+        this.dispose();
+        LoginAdmin logAd = new LoginAdmin();
+        logAd.setVisible(true);
     }//GEN-LAST:event_panelLogoutMouseClicked
 
     private void panelManageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseClicked
@@ -404,6 +411,9 @@ public class AdminMain extends javax.swing.JFrame {
     private void panelAddAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAddAdminMouseClicked
         // TODO add your handling code here:
         setColorMouseClicked(panelAddAdmin);
+        
+        registerAdmin regAd = new registerAdmin();
+        regAd.setVisible(true);
     }//GEN-LAST:event_panelAddAdminMouseClicked
 
     private void panelAddAdminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAddAdminMouseEntered

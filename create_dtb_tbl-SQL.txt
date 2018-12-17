@@ -1,40 +1,37 @@
-create database canteen
+drop database canteen;
 
-zô dtb canteen, excute all da command below 
---------------------------------------------
+create database canteen;
 
 create table productType(
-	productTypeID int AUTO_INCREMENT,
+    productTypeID int AUTO_INCREMENT,
     productType varchar(255),
     PRIMARY KEY (productTypeID)
 );
 
-create table productPrice(
-	productID int AUTO_INCREMENT,
-    price float,
-    PRIMARY KEY (productID)
-);
-
 create table employee(
-	employeeID int AUTO_INCREMENT,
+    employeeID int AUTO_INCREMENT,
     employeeName varchar(255),
     employeeSex bit,
     employeeDOB Date,
     employeePhoneNumber varchar(255),
     employeeAddress varchar(500),
-    PRIMARY KEY (employeeID)
+    employeeUserName varchar(255),
+    employeePassword varchar(255),
+    PRIMARY KEY (employeeID),
+    UNIQUE (employeeUserName)
 );
 
 create table productMenu(
     productID int AUTO_INCREMENT,
     productName varchar(255),
     productTypeID int,
+    price float,
     PRIMARY KEY (productID),
     FOREIGN KEY (productTypeID) REFERENCES productType(productTypeID)
 );
 
 create table bill(
-	billID int AUTO_INCREMENT,
+    billID int AUTO_INCREMENT,
     purchaseDate DateTime,
     totalPrice float,
     employeeID int,
@@ -43,9 +40,27 @@ create table bill(
 );
 
 create table billDetail(
-	billID int,
+    billID int,
     productID int,
     quantity int,
-    FOREIGN KEY (productID) REFERENCES productPrice(productID),
+    FOREIGN KEY (productID) REFERENCES productMenu(productID),
     FOREIGN KEY (billID) REFERENCES bill(billID)
 );
+
+create table adminAccount(
+    adminAccID int AUTO_INCREMENT,
+    adminUserName varchar(255),
+    adminPassword varchar(255),
+    PRIMARY KEY (adminAccID),
+    UNIQUE (adminUserName)
+);
+
+insert into productType(productType) values ('Food');
+insert into productType(productType) values ('Drink');
+insert into productType(productType) values ('Study Tool');
+insert into productType(productType) values ('Other');
+
+INSERT INTO employee (employeeID, employeeName, employeeSex, employeeDOB, employeePhoneNumber, employeeAddress, employeeUserName, employeePassword) VALUES (NULL, 'Nhan Vien Vi Du', b'1', '1992-01-01', '01234567890', 'Trung Quoc', 'nhanvien', SHA1('nhanvien'));
+INSERT INTO adminaccount (adminAccID, adminUserName, adminPassword) VALUES (NULL, 'admin', SHA1('admin'));
+
+

@@ -41,9 +41,9 @@ public class EmployeesMain extends javax.swing.JFrame {
         mainMenu = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        panelManage = new javax.swing.JPanel();
+        panelLogOut = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        panelAnalyze = new javax.swing.JPanel();
+        panelBill = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         menuBackground = new javax.swing.JLabel();
 
@@ -107,17 +107,17 @@ public class EmployeesMain extends javax.swing.JFrame {
         mainMenu.add(panelMenu);
         panelMenu.setBounds(91, 129, 240, 170);
 
-        panelManage.setBackground(new java.awt.Color(204, 255, 255));
-        panelManage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelManage.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelLogOut.setBackground(new java.awt.Color(204, 255, 255));
+        panelLogOut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelLogOut.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelManageMouseClicked(evt);
+                panelLogOutMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelManageMouseEntered(evt);
+                panelLogOutMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelManageMouseExited(evt);
+                panelLogOutMouseExited(evt);
             }
         });
 
@@ -128,37 +128,37 @@ public class EmployeesMain extends javax.swing.JFrame {
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        javax.swing.GroupLayout panelManageLayout = new javax.swing.GroupLayout(panelManage);
-        panelManage.setLayout(panelManageLayout);
-        panelManageLayout.setHorizontalGroup(
-            panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelManageLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelLogOutLayout = new javax.swing.GroupLayout(panelLogOut);
+        panelLogOut.setLayout(panelLogOutLayout);
+        panelLogOutLayout.setHorizontalGroup(
+            panelLogOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLogOutLayout.createSequentialGroup()
                 .addContainerGap(68, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(58, 58, 58))
         );
-        panelManageLayout.setVerticalGroup(
-            panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelManageLayout.createSequentialGroup()
+        panelLogOutLayout.setVerticalGroup(
+            panelLogOutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLogOutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        mainMenu.add(panelManage);
-        panelManage.setBounds(1020, 129, 240, 170);
+        mainMenu.add(panelLogOut);
+        panelLogOut.setBounds(1020, 129, 240, 170);
 
-        panelAnalyze.setBackground(new java.awt.Color(204, 255, 255));
-        panelAnalyze.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panelAnalyze.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelBill.setBackground(new java.awt.Color(204, 255, 255));
+        panelBill.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panelBill.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panelAnalyzeMouseClicked(evt);
+                panelBillMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                panelAnalyzeMouseEntered(evt);
+                panelBillMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panelAnalyzeMouseExited(evt);
+                panelBillMouseExited(evt);
             }
         });
 
@@ -169,25 +169,25 @@ public class EmployeesMain extends javax.swing.JFrame {
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        javax.swing.GroupLayout panelAnalyzeLayout = new javax.swing.GroupLayout(panelAnalyze);
-        panelAnalyze.setLayout(panelAnalyzeLayout);
-        panelAnalyzeLayout.setHorizontalGroup(
-            panelAnalyzeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAnalyzeLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelBillLayout = new javax.swing.GroupLayout(panelBill);
+        panelBill.setLayout(panelBillLayout);
+        panelBillLayout.setHorizontalGroup(
+            panelBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBillLayout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addComponent(jLabel2)
                 .addContainerGap(73, Short.MAX_VALUE))
         );
-        panelAnalyzeLayout.setVerticalGroup(
-            panelAnalyzeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAnalyzeLayout.createSequentialGroup()
+        panelBillLayout.setVerticalGroup(
+            panelBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBillLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        mainMenu.add(panelAnalyze);
-        panelAnalyze.setBounds(550, 130, 240, 170);
+        mainMenu.add(panelBill);
+        panelBill.setBounds(550, 130, 240, 170);
 
         menuBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/043 New York.png"))); // NOI18N
         mainMenu.add(menuBackground);
@@ -219,25 +219,25 @@ public class EmployeesMain extends javax.swing.JFrame {
         resetColor((panelMenu));
     }//GEN-LAST:event_panelMenuMouseExited
 
-    private void panelAnalyzeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAnalyzeMouseEntered
+    private void panelBillMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBillMouseEntered
         // TODO add your handling code here:
-        setColorMouseEntered(panelAnalyze);
-    }//GEN-LAST:event_panelAnalyzeMouseEntered
+        setColorMouseEntered(panelBill);
+    }//GEN-LAST:event_panelBillMouseEntered
 
-    private void panelAnalyzeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAnalyzeMouseExited
+    private void panelBillMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBillMouseExited
         // TODO add your handling code here:
-        resetColor(panelAnalyze);
-    }//GEN-LAST:event_panelAnalyzeMouseExited
+        resetColor(panelBill);
+    }//GEN-LAST:event_panelBillMouseExited
 
-    private void panelManageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseEntered
+    private void panelLogOutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelLogOutMouseEntered
         // TODO add your handling code here:
-        setColorMouseEntered(panelManage);
-    }//GEN-LAST:event_panelManageMouseEntered
+        setColorMouseEntered(panelLogOut);
+    }//GEN-LAST:event_panelLogOutMouseEntered
 
-    private void panelManageMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseExited
+    private void panelLogOutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelLogOutMouseExited
         // TODO add your handling code here:
-        resetColor(panelManage);
-    }//GEN-LAST:event_panelManageMouseExited
+        resetColor(panelLogOut);
+    }//GEN-LAST:event_panelLogOutMouseExited
 
     private void panelMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMenuMouseClicked
         // TODO add your handling code here:
@@ -247,15 +247,19 @@ public class EmployeesMain extends javax.swing.JFrame {
         //lo.show();
     }//GEN-LAST:event_panelMenuMouseClicked
 
-    private void panelAnalyzeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAnalyzeMouseClicked
+    private void panelBillMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelBillMouseClicked
         // TODO add your handling code here:
-        setColorMouseClicked(panelAnalyze);
-    }//GEN-LAST:event_panelAnalyzeMouseClicked
+        setColorMouseClicked(panelBill);
+    }//GEN-LAST:event_panelBillMouseClicked
 
-    private void panelManageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseClicked
+    private void panelLogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelLogOutMouseClicked
         // TODO add your handling code here:
-        setColorMouseClicked(panelManage);
-    }//GEN-LAST:event_panelManageMouseClicked
+        setColorMouseClicked(panelLogOut);
+        this.dispose();
+        LoginEmployee logEmp = new LoginEmployee();
+        
+        logEmp.setVisible(true);
+    }//GEN-LAST:event_panelLogOutMouseClicked
 public void setColorMouseEntered(JPanel panel){
     panel.setBackground(new java.awt.Color(153, 255, 255));
 }
@@ -319,8 +323,8 @@ public void setColorMouseClicked(JPanel panel){
     private javax.swing.JLabel logoBackground;
     private javax.swing.JPanel mainMenu;
     private javax.swing.JLabel menuBackground;
-    private javax.swing.JPanel panelAnalyze;
-    private javax.swing.JPanel panelManage;
+    private javax.swing.JPanel panelBill;
+    private javax.swing.JPanel panelLogOut;
     private javax.swing.JPanel panelMenu;
     // End of variables declaration//GEN-END:variables
 }

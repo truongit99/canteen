@@ -1,8 +1,19 @@
 package canteen_login;
 
+import canteen_connection.Connect;
+import canteen_encrypt.EncryptSHA1;
 import canteen_main.AdminMain;
+import canteen_main.EmployeesMain;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 public class LoginAdmin extends javax.swing.JFrame {    
+    
+    Connection conn;
+    PreparedStatement pst;
+    ResultSet rs;
     
     public LoginAdmin() {
         initComponents();
@@ -10,6 +21,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -28,8 +40,8 @@ public class LoginAdmin extends javax.swing.JFrame {
         seperatorPassword = new javax.swing.JSeparator();
         iconUserName = new javax.swing.JLabel();
         iconPassword = new javax.swing.JLabel();
-        kButton1 = new keeptoo.KButton();
-        kButton2 = new keeptoo.KButton();
+        buttonCancel = new keeptoo.KButton();
+        buttonLogIn = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Đăng nhập tài khoản");
@@ -79,25 +91,35 @@ public class LoginAdmin extends javax.swing.JFrame {
 
         iconPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Key 2_32px.png"))); // NOI18N
 
-        kButton1.setForeground(new java.awt.Color(0, 0, 0));
-        kButton1.setText("Thoát");
-        kButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        kButton1.setkBackGroundColor(new java.awt.Color(0, 204, 102));
-        kButton1.setkBorderRadius(50);
-        kButton1.setkEndColor(new java.awt.Color(102, 255, 153));
-        kButton1.setkForeGround(new java.awt.Color(0, 0, 0));
-        kButton1.setkHoverForeGround(new java.awt.Color(0, 0, 0));
-        kButton1.setkHoverStartColor(new java.awt.Color(0, 153, 102));
+        buttonCancel.setForeground(new java.awt.Color(0, 0, 0));
+        buttonCancel.setText("Thoát");
+        buttonCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonCancel.setkBackGroundColor(new java.awt.Color(0, 204, 102));
+        buttonCancel.setkBorderRadius(50);
+        buttonCancel.setkEndColor(new java.awt.Color(102, 255, 153));
+        buttonCancel.setkForeGround(new java.awt.Color(0, 0, 0));
+        buttonCancel.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        buttonCancel.setkHoverStartColor(new java.awt.Color(0, 153, 102));
+        buttonCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCancelActionPerformed(evt);
+            }
+        });
 
-        kButton2.setForeground(new java.awt.Color(0, 0, 0));
-        kButton2.setText("Đăng Nhập");
-        kButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        kButton2.setkBackGroundColor(new java.awt.Color(0, 204, 102));
-        kButton2.setkBorderRadius(50);
-        kButton2.setkEndColor(new java.awt.Color(102, 255, 153));
-        kButton2.setkForeGround(new java.awt.Color(0, 0, 0));
-        kButton2.setkHoverForeGround(new java.awt.Color(0, 0, 0));
-        kButton2.setkHoverStartColor(new java.awt.Color(0, 153, 102));
+        buttonLogIn.setForeground(new java.awt.Color(0, 0, 0));
+        buttonLogIn.setText("Đăng Nhập");
+        buttonLogIn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        buttonLogIn.setkBackGroundColor(new java.awt.Color(0, 204, 102));
+        buttonLogIn.setkBorderRadius(50);
+        buttonLogIn.setkEndColor(new java.awt.Color(102, 255, 153));
+        buttonLogIn.setkForeGround(new java.awt.Color(0, 0, 0));
+        buttonLogIn.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        buttonLogIn.setkHoverStartColor(new java.awt.Color(0, 153, 102));
+        buttonLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogInActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -128,8 +150,8 @@ public class LoginAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(82, 82, 82)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(buttonLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -154,9 +176,9 @@ public class LoginAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(seperatorPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addComponent(kButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
-                .addComponent(kButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
         );
 
@@ -182,6 +204,44 @@ public class LoginAdmin extends javax.swing.JFrame {
     private void textFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldPasswordActionPerformed
+
+    private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
+        // TODO add your handling code here:
+        try {
+        String username = textFieldUserName.getText();
+        String password = EncryptSHA1.sha1(textFieldPassword.getText());
+        
+        if (username.equals("") || password.equals("")) {
+            JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
+        } else {
+                conn = Connect.getConnection();
+                pst = conn.prepareStatement("select * from adminaccount where adminUserName=? and adminPassword=?");
+                
+                pst.setString(1, username);
+                pst.setString(2, password);
+                
+                rs = pst.executeQuery();
+                
+                if (rs.next()) {
+                    AdminMain adMain = new AdminMain();
+                    
+                    adMain.setVisible(true);
+                    this.setVisible(false);
+                    
+                    
+                } else {
+                    JOptionPane.showMessageDialog(this, "User Name or Password is wrong", "Error", 1);
+                }
+        }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+        }
+    }//GEN-LAST:event_buttonLogInActionPerformed
+
+    private void buttonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_buttonCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,13 +342,13 @@ public class LoginAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private keeptoo.KButton buttonCancel;
+    private keeptoo.KButton buttonLogIn;
     private javax.swing.JLabel iconPassword;
     private javax.swing.JLabel iconUserName;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private keeptoo.KButton kButton1;
-    private keeptoo.KButton kButton2;
     private javax.swing.JLabel labelPassword;
     private javax.swing.JLabel labelTitle;
     private javax.swing.JLabel labelUserName;
