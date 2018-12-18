@@ -267,8 +267,8 @@ public class EmployeeAdd extends javax.swing.JFrame {
             
             String empSex;
             if (radioButtonFemale.isSelected() == true ) 
-                empSex = radioButtonFemale.getText();
-            else empSex = radioButtonMale.getText();
+                empSex = radioButtonFemale.getText().trim();
+            else empSex = radioButtonMale.getText().trim();
             
             String empDOB = dateFormat.format(dateChooserEmployeeDOB.getDate());
             
