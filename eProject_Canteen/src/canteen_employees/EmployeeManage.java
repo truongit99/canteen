@@ -5,7 +5,15 @@
  */
 package canteen_employees;
 
-import javax.swing.JPanel;
+import canteen_connection.Connect;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,13 +21,91 @@ import javax.swing.JPanel;
  */
 public class EmployeeManage extends javax.swing.JFrame {
 
+    Employee employee;
+    DefaultTableModel model;
+    Connection conn;
+    Statement st;
+    ResultSet rs;
     /**
      * Creates new form NewJFrame
      */
     public EmployeeManage() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        
+        showEmployeeInTable();
+        
+        
     }
 
+    public ArrayList<Employee> getEmployeeList() {
+        
+            ArrayList<Employee> employeeList = new ArrayList<Employee>();
+             
+            conn = Connect.getConnection();
+            String s = "SELECT * FROM employee";
+            
+            try {
+            st = conn.createStatement();
+            rs = st.executeQuery(s);
+            
+            
+            while (rs.next()) {
+                employee = new Employee(rs.getString("employeeID"), rs.getString("employeeName"), rs.getString("employeeSex"), rs.getString("employeeDOB"), rs.getString("employeePhoneNumber"), rs.getString("employeeAddress"), rs.getString("employeeUserName"));
+                employeeList.add(employee);
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+            
+        }
+            return employeeList;
+    }
+    
+    public void showEmployeeInTable() {
+        ArrayList<Employee> list = getEmployeeList();
+        
+        model = (DefaultTableModel) tableInfomationEmployee.getModel();
+        
+        Object[] row = new Object[7];
+        for (int i=0;i<list.size();i++) {
+            row[0] = list.get(i).getEmployeeID();
+            row[1] = list.get(i).getEmployeeName();
+            row[2] = list.get(i).getEmployeeSex();
+            row[3] = list.get(i).getEmployeeDOB();
+            row[4] = list.get(i).getEmployeePhone();
+            row[5] = list.get(i).getEmployeeAddress();
+            row[6] = list.get(i).getEmployeeUsername();
+            
+            model.addRow(row);
+        }
+    }
+    
+    public void showEmployee(int index) {
+        EmployeeEdit empEdit = new EmployeeEdit();
+        
+        empEdit.textFieldEmployeeName.setText(getEmployeeList().get(index).getEmployeeName());
+        empEdit.textFieldEmployeeID.setText(getEmployeeList().get(index).getEmployeeID());
+        empEdit.textFieldEmployeeAddress.setText(getEmployeeList().get(index).getEmployeeAddress());
+        empEdit.textFieldEmployeePhoneNumber.setText(getEmployeeList().get(index).getEmployeePhone());
+        empEdit.textFieldEmployeeUserName.setText(getEmployeeList().get(index).getEmployeeUsername());
+        
+        try {
+        Date date = null;
+        date = new SimpleDateFormat("yyyy-MM-dd").parse((String)getEmployeeList().get(index).getEmployeeDOB());
+        empEdit.dateChooserEmployeeDOB.setDate(date);
+        
+        
+        empEdit.setVisible(true);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(this, "Please choose a employee to edit", "Message", 1); 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+            //e.printStackTrace();
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,7 +117,6 @@ public class EmployeeManage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        buttonBack = new javax.swing.JLabel();
         buttonAddEmployee = new javax.swing.JLabel();
         buttonEditEmployee = new javax.swing.JLabel();
         buttonDeleteEmployee = new javax.swing.JLabel();
@@ -57,26 +142,36 @@ public class EmployeeManage extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        buttonBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Undo_48px.png"))); // NOI18N
-        buttonBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(buttonBack);
-        buttonBack.setBounds(10, 0, 50, 50);
-
         buttonAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buttonAddEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Add User Male_48px.png"))); // NOI18N
         buttonAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonAddEmployeeMouseClicked(evt);
+            }
+        });
         jPanel2.add(buttonAddEmployee);
         buttonAddEmployee.setBounds(0, 370, 70, 60);
 
         buttonEditEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buttonEditEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Edit_48px.png"))); // NOI18N
         buttonEditEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonEditEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonEditEmployeeMouseClicked(evt);
+            }
+        });
         jPanel2.add(buttonEditEmployee);
         buttonEditEmployee.setBounds(0, 532, 70, 60);
 
         buttonDeleteEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buttonDeleteEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Trash Can_48px.png"))); // NOI18N
         buttonDeleteEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonDeleteEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonDeleteEmployeeMouseClicked(evt);
+            }
+        });
         jPanel2.add(buttonDeleteEmployee);
         buttonDeleteEmployee.setBounds(0, 690, 70, 60);
 
@@ -176,20 +271,34 @@ public class EmployeeManage extends javax.swing.JFrame {
         tableInfomationEmployee.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         tableInfomationEmployee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
+                "ID", "Employee Name", "Sex", "DOB", "Phone Number", "Address", "User Name"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tableInfomationEmployee.setGridColor(new java.awt.Color(255, 255, 255));
         tableInfomationEmployee.setRowHeight(20);
         tableInfomationEmployee.setSelectionBackground(new java.awt.Color(233, 235, 197));
         tableInfomationEmployee.setSelectionForeground(new java.awt.Color(51, 51, 51));
         jScrollPane2.setViewportView(tableInfomationEmployee);
+        if (tableInfomationEmployee.getColumnModel().getColumnCount() > 0) {
+            tableInfomationEmployee.getColumnModel().getColumn(0).setResizable(false);
+            tableInfomationEmployee.getColumnModel().getColumn(1).setResizable(false);
+            tableInfomationEmployee.getColumnModel().getColumn(2).setResizable(false);
+            tableInfomationEmployee.getColumnModel().getColumn(3).setResizable(false);
+            tableInfomationEmployee.getColumnModel().getColumn(4).setResizable(false);
+            tableInfomationEmployee.getColumnModel().getColumn(5).setResizable(false);
+            tableInfomationEmployee.getColumnModel().getColumn(6).setResizable(false);
+        }
 
         jPanel9.add(jScrollPane2);
         jScrollPane2.setBounds(2, 2, 1180, 540);
@@ -209,6 +318,52 @@ public class EmployeeManage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonAddEmployeeMouseClicked
+        // TODO add your handling code here:
+        EmployeeAdd empAdd = new EmployeeAdd();
+        empAdd.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_buttonAddEmployeeMouseClicked
+
+    private void buttonEditEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditEmployeeMouseClicked
+        // TODO add your handling code here:
+        try {
+            int index = tableInfomationEmployee.getSelectedRow();
+            showEmployee(index);
+            this.dispose();
+            } catch (ArrayIndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(this, "Please choose a employee to edit", "Message", 1); 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+            //e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_buttonEditEmployeeMouseClicked
+
+    private void buttonDeleteEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonDeleteEmployeeMouseClicked
+        // TODO add your handling code here:
+        try {
+                conn = Connect.getConnection();
+                st = conn.createStatement();
+                
+                
+                int index = tableInfomationEmployee.getSelectedRow();
+                int id = Integer.parseInt(getEmployeeList().get(index).getEmployeeID());
+                
+                st.executeUpdate(String.format("delete from employee where employeeID=%d", id));
+                
+                JOptionPane.showMessageDialog(this, "Employee deleted successfully", "Success", 1);
+                
+                model.setRowCount(0);
+                this.showEmployeeInTable();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(this, "Please choose a employee to delete", "Message", 1);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+        }
+    }//GEN-LAST:event_buttonDeleteEmployeeMouseClicked
 
     
     /**
@@ -259,7 +414,6 @@ public class EmployeeManage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel buttonAddEmployee;
-    private javax.swing.JLabel buttonBack;
     private javax.swing.JLabel buttonDeleteEmployee;
     private javax.swing.JLabel buttonEditEmployee;
     private javax.swing.JLabel buttonSearchEmployee;

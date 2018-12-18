@@ -6,13 +6,9 @@
 package canteen_products;
 
 import canteen_connection.Connect;
-import java.awt.Cursor;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -38,7 +34,6 @@ public class ProductManage extends javax.swing.JFrame {
 //        loadTable();
         showProductInTable();
     }
-    
     
     public ArrayList<Product> getProductList() {
         

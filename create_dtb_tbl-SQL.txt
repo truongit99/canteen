@@ -11,7 +11,7 @@ create table productType(
 create table employee(
     employeeID int AUTO_INCREMENT,
     employeeName varchar(255),
-    employeeSex bit,
+    employeeSex varchar(6),
     employeeDOB Date,
     employeePhoneNumber varchar(255),
     employeeAddress varchar(500),
@@ -60,7 +60,7 @@ insert into productType(productType) values ('Drink');
 insert into productType(productType) values ('Study Tool');
 insert into productType(productType) values ('Other');
 
-INSERT INTO employee (employeeID, employeeName, employeeSex, employeeDOB, employeePhoneNumber, employeeAddress, employeeUserName, employeePassword) VALUES (NULL, 'Nhan Vien Vi Du', b'1', '1992-01-01', '01234567890', 'Trung Quoc', 'nhanvien', SHA1('nhanvien'));
+INSERT INTO employee (employeeID, employeeName, employeeSex, employeeDOB, employeePhoneNumber, employeeAddress, employeeUserName, employeePassword) VALUES (NULL, 'Nhan Vien Vi Du', 'Male', '1992-01-01', '01234567890', 'Trung Quoc', 'nhanvien', SHA1('nhanvien'));
 INSERT INTO adminaccount (adminAccID, adminUserName, adminPassword) VALUES (NULL, 'admin', SHA1('admin'));
 
 

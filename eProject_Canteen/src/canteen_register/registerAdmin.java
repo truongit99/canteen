@@ -54,7 +54,7 @@ public class registerAdmin extends javax.swing.JFrame {
         buttonRegister = new keeptoo.KButton();
         buttonCancel = new keeptoo.KButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         kGradientPanel1.setkBorderRadius(0);
         kGradientPanel1.setkEndColor(new java.awt.Color(153, 255, 51));

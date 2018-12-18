@@ -5,6 +5,7 @@
  */
 package canteen_main;
 
+import canteen_employees.EmployeeManage;
 import canteen_login.LoginAdmin;
 import javafx.scene.paint.Color;
 import javax.swing.JPanel;
@@ -92,7 +93,7 @@ public class AdminMain extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Food_96px.png"))); // NOI18N
-        jLabel1.setText("Thực Đơn");
+        jLabel1.setText("Products");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -103,7 +104,7 @@ public class AdminMain extends javax.swing.JFrame {
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addGap(71, 71, 71)
                 .addComponent(jLabel1)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +134,7 @@ public class AdminMain extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Logout Rounded Left_96px.png"))); // NOI18N
-        jLabel4.setText("Đăng Xuất");
+        jLabel4.setText("Log Out");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -144,7 +145,7 @@ public class AdminMain extends javax.swing.JFrame {
             .addGroup(panelLogoutLayout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(jLabel4)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         panelLogoutLayout.setVerticalGroup(
             panelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +175,7 @@ public class AdminMain extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Manager_100px.png"))); // NOI18N
-        jLabel5.setText("Nhân Viên");
+        jLabel5.setText("Employee");
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -183,7 +184,7 @@ public class AdminMain extends javax.swing.JFrame {
         panelManageLayout.setHorizontalGroup(
             panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelManageLayout.createSequentialGroup()
-                .addContainerGap(62, Short.MAX_VALUE)
+                .addContainerGap(67, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(66, 66, 66))
         );
@@ -215,7 +216,7 @@ public class AdminMain extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Purchase Order_96px.png"))); // NOI18N
-        jLabel2.setText("Hóa Đơn");
+        jLabel2.setText("Bill");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -223,10 +224,10 @@ public class AdminMain extends javax.swing.JFrame {
         panelBill.setLayout(panelBillLayout);
         panelBillLayout.setHorizontalGroup(
             panelBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBillLayout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+            .addGroup(panelBillLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
                 .addComponent(jLabel2)
-                .addGap(63, 63, 63))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         panelBillLayout.setVerticalGroup(
             panelBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +257,7 @@ public class AdminMain extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 255));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Increase_100px.png"))); // NOI18N
-        jLabel7.setText("Thống Kê");
+        jLabel7.setText("Analyze");
         jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -267,7 +268,7 @@ public class AdminMain extends javax.swing.JFrame {
             .addGroup(panelAnalyzeLayout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jLabel7)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         panelAnalyzeLayout.setVerticalGroup(
             panelAnalyzeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,7 +298,7 @@ public class AdminMain extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 255));
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Plus_100px.png"))); // NOI18N
-        jLabel6.setText("Thêm Admin");
+        jLabel6.setText("Add Admin");
         jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
@@ -306,9 +307,9 @@ public class AdminMain extends javax.swing.JFrame {
         panelAddAdminLayout.setHorizontalGroup(
             panelAddAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAddAdminLayout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(46, 46, 46))
+                .addGap(56, 56, 56))
         );
         panelAddAdminLayout.setVerticalGroup(
             panelAddAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -389,13 +390,16 @@ public class AdminMain extends javax.swing.JFrame {
         setColorMouseClicked(panelLogout);
         
         this.dispose();
-        LoginAdmin logAd = new LoginAdmin();
-        logAd.setVisible(true);
+        LoginEmployee logEmp = new LoginEmployee();
+        logEmp.setVisible(true);
     }//GEN-LAST:event_panelLogoutMouseClicked
 
     private void panelManageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseClicked
         // TODO add your handling code here:
         setColorMouseClicked(panelManage);
+        
+        EmployeeManage empMng = new EmployeeManage();
+        empMng.setVisible(true);
     }//GEN-LAST:event_panelManageMouseClicked
 
     private void panelManageMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelManageMouseEntered

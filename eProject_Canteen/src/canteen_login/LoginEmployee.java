@@ -66,17 +66,19 @@ public class LoginEmployee extends javax.swing.JFrame {
 
         labelTitle.setFont(new java.awt.Font("Times New Roman", 0, 32)); // NOI18N
         labelTitle.setForeground(new java.awt.Color(0, 51, 153));
-        labelTitle.setText("Quản Lý Canteen");
+        labelTitle.setText("Canteen");
 
         labelUserName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelUserName.setText("Tài Khoản");
+        labelUserName.setForeground(new java.awt.Color(102, 102, 102));
+        labelUserName.setText("User Name");
 
         textFieldUserName.setBackground(new java.awt.Color(224, 235, 240));
         textFieldUserName.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         textFieldUserName.setBorder(null);
 
         labelPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelPassword.setText("Mật Khẩu");
+        labelPassword.setForeground(new java.awt.Color(102, 102, 102));
+        labelPassword.setText("Password");
 
         textFieldPassword.setBackground(new java.awt.Color(224, 235, 240));
         textFieldPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -89,7 +91,7 @@ public class LoginEmployee extends javax.swing.JFrame {
         iconInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Info_48px.png"))); // NOI18N
 
         buttonCancel.setForeground(new java.awt.Color(0, 0, 0));
-        buttonCancel.setText("Thoát");
+        buttonCancel.setText("Exit");
         buttonCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buttonCancel.setkBackGroundColor(new java.awt.Color(0, 204, 102));
         buttonCancel.setkBorderRadius(50);
@@ -104,7 +106,7 @@ public class LoginEmployee extends javax.swing.JFrame {
         });
 
         buttonLogIn.setForeground(new java.awt.Color(0, 0, 0));
-        buttonLogIn.setText("Đăng Nhập");
+        buttonLogIn.setText("Log In");
         buttonLogIn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buttonLogIn.setkBackGroundColor(new java.awt.Color(0, 204, 102));
         buttonLogIn.setkBorderRadius(50);
@@ -119,11 +121,12 @@ public class LoginEmployee extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("Bấm Vào");
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Click");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel3.setText("Đây");
+        jLabel3.setText("Here");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -132,7 +135,8 @@ public class LoginEmployee extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setText("Để Đăng Nhập Bằng Tài Khoản Admin");
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("to login by administrator account");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -173,16 +177,16 @@ public class LoginEmployee extends javax.swing.JFrame {
                             .addComponent(textFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                             .addComponent(seperatorPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
+                        .addGap(169, 169, 169)
                         .addComponent(labelTitle)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(30, 30, 30)
                 .addComponent(labelTitle)
-                .addGap(73, 73, 73)
+                .addGap(74, 74, 74)
                 .addComponent(labelUserName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)

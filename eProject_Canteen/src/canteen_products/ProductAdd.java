@@ -93,11 +93,11 @@ public class ProductAdd extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Food And Wine_100px.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("Thêm sản phẩm mới");
+        jLabel2.setText("Add new product");
 
         labelProductName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelProductName.setForeground(new java.awt.Color(153, 153, 153));
-        labelProductName.setText("Tên Sản Phẩm");
+        labelProductName.setText("Product Name");
 
         textfieldProductName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         textfieldProductName.setBorder(null);
@@ -105,17 +105,17 @@ public class ProductAdd extends javax.swing.JFrame {
 
         labelProductCategory.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelProductCategory.setForeground(new java.awt.Color(153, 153, 153));
-        labelProductCategory.setText("Loại Sản Phẩm");
+        labelProductCategory.setText("Product Type");
 
         labelProductPrice.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelProductPrice.setForeground(new java.awt.Color(153, 153, 153));
-        labelProductPrice.setText("Giá Tiền");
+        labelProductPrice.setText("Price");
 
         textfieldProductPrice.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         textfieldProductPrice.setBorder(null);
         textfieldProductPrice.setOpaque(false);
 
-        buttonCancel.setText("Thoát");
+        buttonCancel.setText("Cancel");
         buttonCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buttonCancel.setkBackGroundColor(new java.awt.Color(0, 204, 102));
         buttonCancel.setkBorderRadius(50);
@@ -129,7 +129,7 @@ public class ProductAdd extends javax.swing.JFrame {
             }
         });
 
-        buttonSave.setText("Lưu");
+        buttonSave.setText("Add");
         buttonSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buttonSave.setkBackGroundColor(new java.awt.Color(0, 204, 102));
         buttonSave.setkBorderRadius(50);
