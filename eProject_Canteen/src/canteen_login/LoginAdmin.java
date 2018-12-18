@@ -3,7 +3,6 @@ package canteen_login;
 import canteen_connection.Connect;
 import canteen_encrypt.EncryptSHA1;
 import canteen_main.AdminMain;
-import canteen_main.EmployeesMain;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -211,11 +210,13 @@ public class LoginAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
         String username = textFieldUserName.getText();
-        String password = EncryptSHA1.sha1(textFieldPassword.getText());
+        String password = textFieldPassword.getText();
         
-        if (username.equals("") || password.equals("")) {
+        if (username.trim().length() == 0 || password.trim().length() == 0) {
             JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
         } else {
+                EncryptSHA1.sha1(password);
+                
                 conn = Connect.getConnection();
                 pst = conn.prepareStatement("select * from adminaccount where adminUserName=? and adminPassword=?");
                 

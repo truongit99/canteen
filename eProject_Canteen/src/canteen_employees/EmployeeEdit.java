@@ -40,13 +40,13 @@ public class EmployeeEdit extends javax.swing.JFrame {
 
     public boolean checkInput() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        if (textFieldEmployeeUserName.getText() == null
-                || textFieldEmployeeName.getText() == null
-                || textFieldEmployeeAddress.getText() == null
-                || textFieldEmployeePhoneNumber.getText() == null
-                || textFieldEmployeePassword.getText() == null
+        if (textFieldEmployeeUserName.getText().trim().length() == 0
+                || textFieldEmployeeName.getText().trim().length() == 0
+                || textFieldEmployeeAddress.getText().trim().length() == 0
+                || textFieldEmployeePhoneNumber.getText().trim().length() == 0
+                || textFieldEmployeePassword.getText().trim().length() == 0
                 || (radioButtonMale.isSelected() == false && radioButtonFemale.isSelected() == false)
-                || dateFormat.format(dateChooserEmployeeDOB.getDate()) == null)
+                || dateFormat.format(dateChooserEmployeeDOB.getDate()).trim().length() == 0)
             return false;
         else return true;
     }
@@ -291,7 +291,7 @@ public class EmployeeEdit extends javax.swing.JFrame {
             String empName = textFieldEmployeeName.getText();
             String empPhone = textFieldEmployeePhoneNumber.getText();
             String empAddress = textFieldEmployeeAddress.getText();
-            String empPassword = EncryptSHA1.sha1(textFieldEmployeePassword.getText());
+            String empPassword = textFieldEmployeePassword.getText();
             
             String empSex;
             if (radioButtonFemale.isSelected() == true ) 
@@ -304,6 +304,8 @@ public class EmployeeEdit extends javax.swing.JFrame {
         if (checkInput() == false) {
             JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
         } else {
+                EncryptSHA1.sha1(empPassword);
+                        
                 conn = Connect.getConnection();
                 st = conn.createStatement();
                 
