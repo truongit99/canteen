@@ -42,13 +42,13 @@ public class EmployeeAdd extends javax.swing.JFrame {
     public boolean checkInput() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         
-        if (textFieldEmployeeUserName.getText().trim().length() == 0
-                || textFieldEmployeeName.getText().trim().length() == 0
-                || textFieldEmployeeAddress.getText().trim().length() == 0
-                || textFieldEmployeePhoneNumber.getText().trim().length() == 0
-                || textFieldEmployeePassword.getText().trim().length() == 0
+        if (textFieldEmployeeUserName.getText() == null
+                || textFieldEmployeeName.getText() == null
+                || textFieldEmployeeAddress.getText() == null
+                || textFieldEmployeePhoneNumber.getText() == null
+                || textFieldEmployeePassword.getText() == null
                 || (radioButtonMale.isSelected() == false && radioButtonFemale.isSelected() == false)
-                || dateFormat.format(dateChooserEmployeeDOB.getDate()).trim().length() == 0) 
+                || dateFormat.format(dateChooserEmployeeDOB.getDate()) == null) 
             return false;
             else return true;
         
@@ -263,12 +263,12 @@ public class EmployeeAdd extends javax.swing.JFrame {
             String empName = textFieldEmployeeName.getText();
             String empPhone = textFieldEmployeePhoneNumber.getText();
             String empAddress = textFieldEmployeeAddress.getText();
-            String empPassword = textFieldEmployeePassword.getText();
+            String empPassword = EncryptSHA1.sha1(textFieldEmployeePassword.getText());
             
             String empSex;
             if (radioButtonFemale.isSelected() == true ) 
-                empSex = radioButtonFemale.getText().trim();
-            else empSex = radioButtonMale.getText().trim();
+                empSex = radioButtonFemale.getText();
+            else empSex = radioButtonMale.getText();
             
             String empDOB = dateFormat.format(dateChooserEmployeeDOB.getDate());
             
@@ -276,8 +276,6 @@ public class EmployeeAdd extends javax.swing.JFrame {
         if (checkInput() == false) {
             JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
         } else {
-                EncryptSHA1.sha1(empPassword);
-                
                 conn = Connect.getConnection();
                 st = conn.createStatement();
                 

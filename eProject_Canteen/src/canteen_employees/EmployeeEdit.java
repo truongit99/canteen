@@ -40,13 +40,13 @@ public class EmployeeEdit extends javax.swing.JFrame {
 
     public boolean checkInput() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        if (textFieldEmployeeUserName.getText().trim().length() == 0
-                || textFieldEmployeeName.getText().trim().length() == 0
-                || textFieldEmployeeAddress.getText().trim().length() == 0
-                || textFieldEmployeePhoneNumber.getText().trim().length() == 0
-                || textFieldEmployeePassword.getText().trim().length() == 0
+        if (textFieldEmployeeUserName.getText() == null
+                || textFieldEmployeeName.getText() == null
+                || textFieldEmployeeAddress.getText() == null
+                || textFieldEmployeePhoneNumber.getText() == null
+                || textFieldEmployeePassword.getText() == null
                 || (radioButtonMale.isSelected() == false && radioButtonFemale.isSelected() == false)
-                || dateFormat.format(dateChooserEmployeeDOB.getDate()).trim().length() == 0)
+                || dateFormat.format(dateChooserEmployeeDOB.getDate()) == null)
             return false;
         else return true;
     }
@@ -239,7 +239,7 @@ public class EmployeeEdit extends javax.swing.JFrame {
         jPanel1.add(iconEmployeePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 440, 40, 30));
         jPanel1.add(separatorEmployeePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, 240, 10));
 
-        textFieldEmployeePassword.setBackground(new java.awt.Color(231, 236, 200));
+        textFieldEmployeePassword.setBackground(new java.awt.Color(234, 233, 193));
         textFieldEmployeePassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         textFieldEmployeePassword.setBorder(null);
         textFieldEmployeePassword.setOpaque(false);
@@ -291,7 +291,7 @@ public class EmployeeEdit extends javax.swing.JFrame {
             String empName = textFieldEmployeeName.getText();
             String empPhone = textFieldEmployeePhoneNumber.getText();
             String empAddress = textFieldEmployeeAddress.getText();
-            String empPassword = textFieldEmployeePassword.getText();
+            String empPassword = EncryptSHA1.sha1(textFieldEmployeePassword.getText());
             
             String empSex;
             if (radioButtonFemale.isSelected() == true ) 
@@ -304,8 +304,6 @@ public class EmployeeEdit extends javax.swing.JFrame {
         if (checkInput() == false) {
             JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
         } else {
-                EncryptSHA1.sha1(empPassword);
-                        
                 conn = Connect.getConnection();
                 st = conn.createStatement();
                 

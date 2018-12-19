@@ -32,7 +32,7 @@ public class LoginEmployee extends javax.swing.JFrame {
         textFieldUserName = new javax.swing.JTextField();
         seperatorUserName = new javax.swing.JSeparator();
         labelPassword = new javax.swing.JLabel();
-        passwordFieldPassword = new javax.swing.JPasswordField();
+        textFieldPassword = new javax.swing.JPasswordField();
         seperatorPassword = new javax.swing.JSeparator();
         iconUserName = new javax.swing.JLabel();
         iconPassword = new javax.swing.JLabel();
@@ -80,9 +80,9 @@ public class LoginEmployee extends javax.swing.JFrame {
         labelPassword.setForeground(new java.awt.Color(102, 102, 102));
         labelPassword.setText("Password");
 
-        passwordFieldPassword.setBackground(new java.awt.Color(224, 235, 240));
-        passwordFieldPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        passwordFieldPassword.setBorder(null);
+        textFieldPassword.setBackground(new java.awt.Color(224, 235, 240));
+        textFieldPassword.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textFieldPassword.setBorder(null);
 
         iconUserName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/User_32px.png"))); // NOI18N
 
@@ -174,7 +174,7 @@ public class LoginEmployee extends javax.swing.JFrame {
                             .addComponent(textFieldUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                             .addComponent(seperatorUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                             .addComponent(labelPassword)
-                            .addComponent(passwordFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                            .addComponent(textFieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
                             .addComponent(seperatorPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(169, 169, 169)
@@ -198,7 +198,7 @@ public class LoginEmployee extends javax.swing.JFrame {
                 .addComponent(labelPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(passwordFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(iconPassword))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(seperatorPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,13 +240,11 @@ public class LoginEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
         String username = textFieldUserName.getText();
-        String password = passwordFieldPassword.getText();
+        String password = EncryptSHA1.sha1(textFieldPassword.getText());
         
-        if (username.trim().length() == 0 || password.trim().length() == 0) {
+        if (username.equals("") || password.equals("")) {
             JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
         } else {
-                EncryptSHA1.sha1(password);
-                
                 conn = Connect.getConnection();
                 pst = conn.prepareStatement("select * from employee where employeeUserName=? and employeePassword=?");
                 
@@ -588,9 +586,9 @@ public class LoginEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel labelUserName;
     private javax.swing.JLabel leftBackground;
     private javax.swing.JLabel logo;
-    private javax.swing.JPasswordField passwordFieldPassword;
     private javax.swing.JSeparator seperatorPassword;
     private javax.swing.JSeparator seperatorUserName;
+    private javax.swing.JPasswordField textFieldPassword;
     private javax.swing.JTextField textFieldUserName;
     // End of variables declaration//GEN-END:variables
 }
