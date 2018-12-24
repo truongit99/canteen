@@ -85,6 +85,9 @@ public class EmployeeManage extends javax.swing.JFrame {
     public void showEmployee(int index) {
         EmployeeEdit empEdit = new EmployeeEdit();
         
+        //set title la ten nhan vien
+        empEdit.setTitle(getEmployeeList().get(index).getEmployeeName());
+        
         empEdit.textFieldEmployeeName.setText(getEmployeeList().get(index).getEmployeeName());
         empEdit.textFieldEmployeeID.setText(getEmployeeList().get(index).getEmployeeID());
         empEdit.textFieldEmployeeAddress.setText(getEmployeeList().get(index).getEmployeeAddress());
@@ -144,6 +147,7 @@ public class EmployeeManage extends javax.swing.JFrame {
 
         buttonAddEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buttonAddEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Add User Male_48px.png"))); // NOI18N
+        buttonAddEmployee.setToolTipText("Add Employee");
         buttonAddEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -155,6 +159,7 @@ public class EmployeeManage extends javax.swing.JFrame {
 
         buttonEditEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buttonEditEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Edit_48px.png"))); // NOI18N
+        buttonEditEmployee.setToolTipText("Edit Employee");
         buttonEditEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonEditEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -166,6 +171,7 @@ public class EmployeeManage extends javax.swing.JFrame {
 
         buttonDeleteEmployee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         buttonDeleteEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Trash Can_48px.png"))); // NOI18N
+        buttonDeleteEmployee.setToolTipText("Delete Employee");
         buttonDeleteEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonDeleteEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -257,6 +263,13 @@ public class EmployeeManage extends javax.swing.JFrame {
         separatorSearchEmployee.setBounds(800, 72, 310, 10);
 
         buttonSearchEmployee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Search_48px.png"))); // NOI18N
+        buttonSearchEmployee.setToolTipText("Search Employee by name");
+        buttonSearchEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonSearchEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonSearchEmployeeMouseClicked(evt);
+            }
+        });
         jPanel3.add(buttonSearchEmployee);
         buttonSearchEmployee.setBounds(1110, 20, 60, 60);
 
@@ -364,6 +377,43 @@ public class EmployeeManage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
         }
     }//GEN-LAST:event_buttonDeleteEmployeeMouseClicked
+
+    private void buttonSearchEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSearchEmployeeMouseClicked
+        // TODO add your handling code here:
+        try {
+            String search = textFieldSearch.getText().trim();
+            
+            //neu o search khong co gi thi load lai bang
+        if (textFieldSearch.getText().trim().length() == 0 ) { 
+            model.setRowCount(0);
+            this.showEmployeeInTable();
+        } else {
+                conn = Connect.getConnection();
+                st = conn.createStatement();
+                
+                rs = st.executeQuery("select * from employee where employeeName like '%"+search+"%'");
+                
+                model.setRowCount(0);
+                
+                while (rs.next()) {
+                model.addRow(new Object[]{
+                rs.getInt("employeeID"),
+                    rs.getString("employeeName"),
+                    rs.getString("employeeSex"),
+                    rs.getString("employeeDOB"),
+                    rs.getString("employeePhoneNumber"),
+                    rs.getString("employeeAddress"),
+                    rs.getString("employeeUserName")
+        });
+            }
+                
+                 
+        }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+            //e.printStackTrace();
+        }
+    }//GEN-LAST:event_buttonSearchEmployeeMouseClicked
 
     
     /**

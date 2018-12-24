@@ -5,6 +5,7 @@
  */
 package canteen_main;
 
+import canteen_analyze.ProductAnalyze;
 import canteen_employees.EmployeeManage;
 import canteen_login.LoginAdmin;
 import javafx.scene.paint.Color;
@@ -58,6 +59,7 @@ public class AdminMain extends javax.swing.JFrame {
         menuBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Admin Main");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -102,16 +104,16 @@ public class AdminMain extends javax.swing.JFrame {
         panelMenuLayout.setHorizontalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addGap(72, 72, 72)
                 .addComponent(jLabel1)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         mainMenu.add(panelMenu);
@@ -142,17 +144,17 @@ public class AdminMain extends javax.swing.JFrame {
         panelLogout.setLayout(panelLogoutLayout);
         panelLogoutLayout.setHorizontalGroup(
             panelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLogoutLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLogoutLayout.createSequentialGroup()
+                .addContainerGap(75, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
         panelLogoutLayout.setVerticalGroup(
             panelLogoutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLogoutLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addComponent(jLabel4)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         mainMenu.add(panelLogout);
@@ -184,16 +186,16 @@ public class AdminMain extends javax.swing.JFrame {
         panelManageLayout.setHorizontalGroup(
             panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelManageLayout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addComponent(jLabel5)
-                .addGap(66, 66, 66))
+                .addGap(61, 61, 61))
         );
         panelManageLayout.setVerticalGroup(
             panelManageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelManageLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addComponent(jLabel5)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         mainMenu.add(panelManage);
@@ -224,17 +226,17 @@ public class AdminMain extends javax.swing.JFrame {
         panelBill.setLayout(panelBillLayout);
         panelBillLayout.setHorizontalGroup(
             panelBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBillLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBillLayout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addGap(65, 65, 65))
         );
         panelBillLayout.setVerticalGroup(
             panelBillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBillLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addComponent(jLabel2)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         mainMenu.add(panelBill);
@@ -266,16 +268,16 @@ public class AdminMain extends javax.swing.JFrame {
         panelAnalyzeLayout.setHorizontalGroup(
             panelAnalyzeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAnalyzeLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(65, 65, 65)
                 .addComponent(jLabel7)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         panelAnalyzeLayout.setVerticalGroup(
             panelAnalyzeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAnalyzeLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAnalyzeLayout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
 
         mainMenu.add(panelAnalyze);
@@ -306,17 +308,17 @@ public class AdminMain extends javax.swing.JFrame {
         panelAddAdmin.setLayout(panelAddAdminLayout);
         panelAddAdminLayout.setHorizontalGroup(
             panelAddAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAddAdminLayout.createSequentialGroup()
-                .addContainerGap(66, Short.MAX_VALUE)
+            .addGroup(panelAddAdminLayout.createSequentialGroup()
+                .addGap(61, 61, 61)
                 .addComponent(jLabel6)
-                .addGap(56, 56, 56))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         panelAddAdminLayout.setVerticalGroup(
             panelAddAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelAddAdminLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(17, 17, 17)
                 .addComponent(jLabel6)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         mainMenu.add(panelAddAdmin);
@@ -433,6 +435,9 @@ public class AdminMain extends javax.swing.JFrame {
     private void panelAnalyzeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAnalyzeMouseClicked
         // TODO add your handling code here:
         setColorMouseClicked(panelAnalyze);
+        
+        ProductAnalyze prodA = new ProductAnalyze();
+        prodA.setVisible(true);
     }//GEN-LAST:event_panelAnalyzeMouseClicked
 
     private void panelAnalyzeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelAnalyzeMouseEntered

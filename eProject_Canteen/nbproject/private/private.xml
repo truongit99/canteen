@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/G-Dragon%20M-TP/Desktop/eProject_Canteen/src/canteen_employees/EmployeeAdd.java</file>
-            <file>file:/C:/Users/G-Dragon%20M-TP/Desktop/eProject_Canteen/src/canteen_products/ProductAdd.java</file>
-            <file>file:/C:/Users/G-Dragon%20M-TP/Desktop/eProject_Canteen/src/canteen_products/ProductManage.java</file>
-            <file>file:/C:/Users/G-Dragon%20M-TP/Desktop/eProject_Canteen/src/canteen_register/registerAdmin.java</file>
-            <file>file:/C:/Users/G-Dragon%20M-TP/Desktop/eProject_Canteen/src/canteen_employees/EmployeeManage.java</file>
-            <file>file:/C:/Users/G-Dragon%20M-TP/Desktop/eProject_Canteen/src/canteen_employees/EmployeeEdit.java</file>
-            <file>file:/C:/Users/G-Dragon%20M-TP/Desktop/eProject_Canteen/src/canteen_products/ProductEdit.java</file>
+            <file>file:/D:/GitHub/canteen/eProject_Canteen/src/canteen_products/ProductEdit.java</file>
+            <file>file:/D:/GitHub/canteen/eProject_Canteen/src/canteen_products/Product.java</file>
+            <file>file:/D:/GitHub/canteen/eProject_Canteen/src/canteen_products/ProductManage.java</file>
+            <file>file:/D:/GitHub/canteen/eProject_Canteen/src/canteen_analyze/ProductAnalyze.java</file>
+            <file>file:/D:/GitHub/canteen/eProject_Canteen/src/canteen_products/ProductAdd.java</file>
         </group>
     </open-files>
 </project-private>

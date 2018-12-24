@@ -55,6 +55,7 @@ public class registerAdmin extends javax.swing.JFrame {
         buttonCancel = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Register Admin Account");
 
         kGradientPanel1.setkBorderRadius(0);
         kGradientPanel1.setkEndColor(new java.awt.Color(153, 255, 51));
@@ -69,7 +70,7 @@ public class registerAdmin extends javax.swing.JFrame {
 
         labelTextfieldUsername.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelTextfieldUsername.setForeground(new java.awt.Color(102, 102, 102));
-        labelTextfieldUsername.setText("Tài khoản");
+        labelTextfieldUsername.setText("User Name");
         jPanel1.add(labelTextfieldUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 350, -1));
 
@@ -80,7 +81,7 @@ public class registerAdmin extends javax.swing.JFrame {
 
         labelTextfieldPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelTextfieldPassword.setForeground(new java.awt.Color(102, 102, 102));
-        labelTextfieldPassword.setText("Mật khẩu");
+        labelTextfieldPassword.setText("Password");
         jPanel1.add(labelTextfieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
         textFieldPassword.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -95,7 +96,7 @@ public class registerAdmin extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 30, 30));
 
         buttonRegister.setBorder(null);
-        buttonRegister.setText("Đăng Kí");
+        buttonRegister.setText("Register");
         buttonRegister.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buttonRegister.setkBackGroundColor(new java.awt.Color(0, 204, 102));
         buttonRegister.setkBorderRadius(50);
@@ -110,7 +111,7 @@ public class registerAdmin extends javax.swing.JFrame {
         jPanel1.add(buttonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, -1, -1));
 
         buttonCancel.setBorder(null);
-        buttonCancel.setText("Hủy");
+        buttonCancel.setText("Cancel");
         buttonCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buttonCancel.setkBackGroundColor(new java.awt.Color(0, 204, 102));
         buttonCancel.setkBorderRadius(50);

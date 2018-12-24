@@ -48,7 +48,7 @@ public class ProductManage extends javax.swing.JFrame {
             
             
             while (rs.next()) {
-                product = new Product(rs.getString("productID"), rs.getString("productName"), rs.getString("productType"), rs.getString("price"));
+                product = new Product(rs.getString("productID"), rs.getString("productName"), rs.getString("productType"), rs.getString("quantity"), rs.getString("price"));
                 productList.add(product);
             }
             
@@ -63,12 +63,13 @@ public class ProductManage extends javax.swing.JFrame {
         
         model = (DefaultTableModel) tableProductMenu.getModel();
         
-        Object[] row = new Object[4];
+        Object[] row = new Object[5];
         for (int i=0;i<list.size();i++) {
             row[0] = list.get(i).getProductID();
             row[1] = list.get(i).getProductName();
             row[2] = list.get(i).getProductTypeID();
-            row[3] = list.get(i).getPrice();
+            row[3] = list.get(i).getQuantity();
+            row[4] = list.get(i).getPrice();
             
             model.addRow(row);
         }
@@ -77,10 +78,13 @@ public class ProductManage extends javax.swing.JFrame {
     public void showItem(int index) {
         ProductEdit prodEdit = new ProductEdit();
         
+        //set title la ten san pham
         prodEdit.setTitle(getProductList().get(index).getProductName());
+        
         prodEdit.textfieldProductID.setText(getProductList().get(index).getProductID());
         prodEdit.textfieldProductName.setText(getProductList().get(index).getProductName());
         prodEdit.comboBoxProductType.setSelectedItem(getProductList().get(index).getProductTypeID());
+        prodEdit.textfieldProductQuantity.setText(getProductList().get(index).getQuantity());
         prodEdit.textfieldProductPrice.setText(getProductList().get(index).getPrice());
         
         prodEdit.setVisible(true);
@@ -110,7 +114,7 @@ public class ProductManage extends javax.swing.JFrame {
         tableProductMenu = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Mặt hàng");
+        setTitle("Manage Products");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -120,6 +124,7 @@ public class ProductManage extends javax.swing.JFrame {
         kGradientPanel1.setLayout(null);
 
         buttonAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Add_50px.png"))); // NOI18N
+        buttonAdd.setToolTipText("Add Product");
         buttonAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -130,6 +135,7 @@ public class ProductManage extends javax.swing.JFrame {
         buttonAdd.setBounds(10, 370, 50, 50);
 
         buttonEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Edit_48px.png"))); // NOI18N
+        buttonEdit.setToolTipText("Edit Product");
         buttonEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonEdit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -140,6 +146,7 @@ public class ProductManage extends javax.swing.JFrame {
         buttonEdit.setBounds(10, 550, 50, 40);
 
         buttonDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Trash Can_48px.png"))); // NOI18N
+        buttonDelete.setToolTipText("Delete Product");
         buttonDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buttonDelete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -161,7 +168,13 @@ public class ProductManage extends javax.swing.JFrame {
         logo.setBounds(40, 30, 270, 190);
 
         buttonSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/canteen_image/Search_48px.png"))); // NOI18N
+        buttonSearch.setToolTipText("Search Product by name");
         buttonSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        buttonSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonSearchMouseClicked(evt);
+            }
+        });
         kGradientPanel2.add(buttonSearch);
         buttonSearch.setBounds(1090, 28, 48, 50);
 
@@ -180,11 +193,11 @@ public class ProductManage extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "ProductName", "ProductType", "Price"
+                "ID", "ProductName", "ProductType", "Quantity", "Price"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -202,6 +215,7 @@ public class ProductManage extends javax.swing.JFrame {
             tableProductMenu.getColumnModel().getColumn(1).setResizable(false);
             tableProductMenu.getColumnModel().getColumn(2).setResizable(false);
             tableProductMenu.getColumnModel().getColumn(3).setResizable(false);
+            tableProductMenu.getColumnModel().getColumn(4).setResizable(false);
         }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 1180, 540));
@@ -264,6 +278,38 @@ public class ProductManage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
         }
     }//GEN-LAST:event_buttonDeleteMouseClicked
+
+    private void buttonSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonSearchMouseClicked
+        // TODO add your handling code here:
+        try {
+            String search = textFieldSearch.getText().trim();
+            
+            //neu o search khong co gi thi load lai bang
+        if (textFieldSearch.getText().trim().length() == 0 ) { 
+            model.setRowCount(0);
+            this.showProductInTable();
+        } else {
+                conn = Connect.getConnection();
+                st = conn.createStatement();
+                
+                rs = st.executeQuery("select * from productmenu LEFT JOIN producttype on productmenu.productTypeID = producttype.productTypeID where productName like '%"+search+"%'");
+                
+                model.setRowCount(0);
+                
+                while (rs.next()) {
+                model.addRow(new Object[]{
+                rs.getInt("productID"), rs.getString("productName"), rs.getString("productType"), rs.getString("price")
+        });
+            }
+                
+                 
+        }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", 1);
+            //e.printStackTrace();
+        }
+                                         
+    }//GEN-LAST:event_buttonSearchMouseClicked
 
     
     /**

@@ -44,7 +44,7 @@ public class LoginEmployee extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Đăng nhập tài khoản");
+        setTitle("Login as employee");
 
         jPanel1.setBackground(new java.awt.Color(224, 235, 240));
         jPanel1.setLayout(null);
