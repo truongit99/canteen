@@ -23,7 +23,7 @@ public class Connect {
             
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         return conn;
     }

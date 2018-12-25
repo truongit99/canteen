@@ -3,7 +3,6 @@ package canteen_login;
 import canteen_connection.Connect;
 import canteen_encrypt.EncryptSHA1;
 import canteen_main.AdminMain;
-import canteen_main.EmployeesMain;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -44,7 +43,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         buttonLogIn = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Đăng nhập tài khoản");
+        setTitle("Login as Administrator");
 
         jPanel1.setBackground(new java.awt.Color(186, 249, 174));
         jPanel1.setLayout(null);
@@ -213,7 +212,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         String username = textFieldUserName.getText();
         String password = EncryptSHA1.sha1(textFieldPassword.getText());
         
-        if (username.equals("") || password.equals("")) {
+        if (username.trim().length() == 0 || password.trim().length() == 0) {
             JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
         } else {
                 conn = Connect.getConnection();

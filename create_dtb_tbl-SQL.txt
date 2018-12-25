@@ -25,6 +25,7 @@ create table productMenu(
     productID int AUTO_INCREMENT,
     productName varchar(255),
     productTypeID int,
+    quantity int,
     price float,
     PRIMARY KEY (productID),
     FOREIGN KEY (productTypeID) REFERENCES productType(productTypeID)
