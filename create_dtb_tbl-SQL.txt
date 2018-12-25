@@ -1,0 +1,67 @@
+drop database canteen;
+
+create database canteen;
+
+create table productType(
+    productTypeID int AUTO_INCREMENT,
+    productType varchar(255),
+    PRIMARY KEY (productTypeID)
+);
+
+create table employee(
+    employeeID int AUTO_INCREMENT,
+    employeeName varchar(255),
+    employeeSex varchar(6),
+    employeeDOB Date,
+    employeePhoneNumber varchar(255),
+    employeeAddress varchar(500),
+    employeeUserName varchar(255),
+    employeePassword varchar(255),
+    PRIMARY KEY (employeeID),
+    UNIQUE (employeeUserName)
+);
+
+create table productMenu(
+    productID int AUTO_INCREMENT,
+    productName varchar(255),
+    productTypeID int,
+    quantity int,
+    price float,
+    PRIMARY KEY (productID),
+    FOREIGN KEY (productTypeID) REFERENCES productType(productTypeID)
+);
+
+create table bill(
+    billID int AUTO_INCREMENT,
+    purchaseDate DateTime,
+    totalPrice float,
+    employeeID int,
+    PRIMARY KEY (billID),
+    FOREIGN KEY (employeeID) REFERENCES employee(employeeID)
+);
+
+create table billDetail(
+    billID int,
+    productID int,
+    quantity int,
+    FOREIGN KEY (productID) REFERENCES productMenu(productID),
+    FOREIGN KEY (billID) REFERENCES bill(billID)
+);
+
+create table adminAccount(
+    adminAccID int AUTO_INCREMENT,
+    adminUserName varchar(255),
+    adminPassword varchar(255),
+    PRIMARY KEY (adminAccID),
+    UNIQUE (adminUserName)
+);
+
+insert into productType(productType) values ('Food');
+insert into productType(productType) values ('Drink');
+insert into productType(productType) values ('Study Tool');
+insert into productType(productType) values ('Other');
+
+INSERT INTO employee (employeeID, employeeName, employeeSex, employeeDOB, employeePhoneNumber, employeeAddress, employeeUserName, employeePassword) VALUES (NULL, 'Nhan Vien Vi Du', 'Male', '1992-01-01', '01234567890', 'Trung Quoc', 'nhanvien', SHA1('nhanvien'));
+INSERT INTO adminaccount (adminAccID, adminUserName, adminPassword) VALUES (NULL, 'admin', SHA1('admin'));
+
+
