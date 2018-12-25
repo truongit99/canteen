@@ -97,7 +97,7 @@ public class EmployeeAdd extends javax.swing.JFrame {
         textFieldEmployeePassword = new javax.swing.JPasswordField();
         backgroundEmployeeDetail = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -299,6 +299,8 @@ public class EmployeeAdd extends javax.swing.JFrame {
     private void buttonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        EmployeeManage empMng = new EmployeeManage();
+        empMng.setVisible(true);
     }//GEN-LAST:event_buttonCancelActionPerformed
 
     /**

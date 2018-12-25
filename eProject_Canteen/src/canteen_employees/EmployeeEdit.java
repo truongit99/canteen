@@ -97,7 +97,7 @@ public class EmployeeEdit extends javax.swing.JFrame {
         separatorEmployeeID = new javax.swing.JSeparator();
         backgroundEmployeeDetail = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
