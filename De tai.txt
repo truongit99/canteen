@@ -1,4 +1,4 @@
-﻿"Đại học FPT xây dựng một căng-tin để phục vụ sinh viên và nhân viên làm việc tại Hòa Lạc. Bạn phát triển một ứng dụng để trợ giúp cho hoạt động của căng-tin này. Ứng dụng phục vụ 3 loại đối tượng: Quản lý, Nhân viên Phục vụ với những hoạt động như:
+﻿"Đại học Aptech xây dựng một căng-tin để phục vụ sinh viên và nhân viên làm việc tại Hòa Lạc. Bạn phát triển một ứng dụng để trợ giúp cho hoạt động của căng-tin này. Ứng dụng phục vụ 3 loại đối tượng: Quản lý, Nhân viên Phục vụ với những hoạt động như:
 + Quản lý các sản phẩm bán trong căng-tin
 + Tạo lập và quản lý các hóa đơn (Bill) bán hàng
 + Quản lý nhân viên

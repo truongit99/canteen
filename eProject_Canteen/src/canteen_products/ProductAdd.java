@@ -46,7 +46,8 @@ public class ProductAdd extends javax.swing.JFrame {
         if (textfieldProductName.getText().trim().length() == 0
                 || textfieldProductPrice.getText().trim().length() == 0
                 || comboBoxProductType.getSelectedItem().toString().equals("--- Product Type ---")
-                || textfieldProductQuantity.getText().trim().length() == 0)
+                || textfieldProductQuantity.getText().trim().length() == 0
+                || Integer.parseInt(textfieldProductQuantity.getText()) <0)
                 
             return false;
          else return true;
@@ -305,7 +306,7 @@ public class ProductAdd extends javax.swing.JFrame {
             int productQuantity = Integer.parseInt(textfieldProductQuantity.getText());
             
         if (checkInput() == false) {
-            JOptionPane.showMessageDialog(this, "Some field is empty", "Error", 1);
+            JOptionPane.showMessageDialog(this, "Some field is wrong", "Error", 1);
         } else {
                 conn = Connect.getConnection();
                 st = conn.createStatement();

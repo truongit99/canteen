@@ -7,8 +7,6 @@ package canteen_main;
 
 import canteen_analyze.ProductAnalyze;
 import canteen_employees.EmployeeManage;
-import canteen_login.LoginAdmin;
-import javafx.scene.paint.Color;
 import javax.swing.JPanel;
 import canteen_login.LoginEmployee;
 import canteen_products.ProductManage;
